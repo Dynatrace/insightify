@@ -1,0 +1,8 @@
+{
+  "label": "Dynatrace Health Extension",
+  "position": 2,
+  "link": {
+    "type": "generated-index",
+    "description": "Let's learn about the Dynatrace extension in less than 5 minutes."
+  }
+}
