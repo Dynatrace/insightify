@@ -1,0 +1,3279 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      6
+    ],
+    "clusterVersion": "Mock Version"
+  },
+  "dashboardMetadata": {
+    "name": "Dynatrace Adoption Overview - $1",
+    "shared": true,
+    "owner": "dynatraceone@dynatrace.com",
+    "preset": true,
+    "popularity": 1,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "License Consumption Details",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 38,
+        "width": 646,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 722,
+        "width": 684,
+        "height": 190
+      },
+      "tileFilter": {},
+      "markdown": "**Action Items**"
+    },
+    {
+      "name": "Environment Feature Flags",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 38,
+        "width": 1102,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 1178,
+        "width": 684,
+        "height": 190
+      },
+      "tileFilter": {},
+      "markdown": "**Action Items**:  \n"
+    },
+    {
+      "name": "Problem Details",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 38,
+        "width": 494,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 760,
+        "width": 722,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "markdown": " **Action Items**:  \n"
+    },
+    {
+      "name": "Application Feature Flags",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 38,
+        "width": 874,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 1178,
+        "width": 684,
+        "height": 190
+      },
+      "tileFilter": {},
+      "markdown": "**Action Items**:  \n"
+    },
+    {
+      "name": "Problem by Severity",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 988,
+        "left": 38,
+        "width": 912,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Problem by Impacted Entities",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 38,
+        "width": 760,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Consumption Data by Management Zone",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1444,
+        "left": 0,
+        "width": 950,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Consumption Data by Host Group",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 2052,
+        "left": 0,
+        "width": 950,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1102,
+        "left": 988,
+        "width": 722,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "markdown": " **Action Items**:  \n"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEyNCIgd2lkdGg9IjEyMiI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxMjQiIHdpZHRoPSIxMjIiIHk9IjUwNSIgeD0iNDIwIj48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjEyMyIgd2lkdGg9IjEyMiIgeT0iNTA2IiB4PSI0MjAiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTIzIiB3aWR0aD0iMTIyIiB5PSI1MDYiIHg9IjQyMCI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxMjMiIHdpZHRoPSIxMjIiIHk9IjUwNiIgeD0iNDIwIj48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTQyMCAtNTA1KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik00NjMuNjczIDU1Ni45NSA0NDUuOTk2IDU3NC44NDcgNDQ1Ljk5NiA1ODMuMjY1IDQ1NC4zNTQgNTgzLjI2NSA0NTQuMzU0IDU3Ni45MzkgNDYxLjI4MSA1NzYuOTM5IDQ2MS4yODEgNTcwLjAxMiA0NjcuOTA3IDU3MC4wMTIgNDY5LjgxOSA1NjMuNzY2QzQ3Mi44NzIgNTY1Ljc5OCA0NzYuNTc2IDU2Ni45OSA0ODAuNTYgNTY2Ljk5IDQ5MS4wMSA1NjYuOTkgNDk5LjQ4OCA1NTguODIyIDQ5OS40ODggNTQ4Ljc0MiA0OTkuNDg4IDUzOC42NjIgNDkxLjAxIDUzMC40OTQgNDgwLjU2IDUzMC40OTQgNDcwLjEwOSA1MzAuNDk0IDQ2MS42NDEgNTM4LjY2MiA0NjEuNjQxIDU0OC43NDIgNDYxLjY1MSA1NTEuNjk1IDQ2Mi4zODIgNTU0LjQ3NyA0NjMuNjczIDU1Ni45NVpNNDczLjc1MyA1MDZDNDg4LjU1NyA1MDYgNTAxLjk4IDUxMi4wMjYgNTExLjcxIDUyMS43MDUgNTIxLjQyOSA1MzEuNDM1IDUyNy40MTUgNTQ0LjgxOCA1MjcuNDE1IDU1OS42NjIgNTI3LjQxNSA1NzAuNDkzIDUyNC4xODIgNTgwLjYxMyA1MTguNjc3IDU4OS4wMzFMNTQxLjkwOSA2MTQuMzQ2IDUyNS44ODQgNjI4Ljk5IDUwMy40ODIgNjA0LjM1NkM0OTQuOTc0IDYxMC4wMzEgNDg0Ljc0NCA2MTMuMzM1IDQ3My43NTMgNjEzLjMzNSA0NTguOTQ4IDYxMy4zMzUgNDQ1LjUyNSA2MDcuMzA5IDQzNS43OTYgNTk3LjYyOSA0MjYuMDc2IDU4Ny44OSA0MjAuMDkxIDU3NC41MDcgNDIwLjA5MSA1NTkuNjYyIDQyMC4wOTEgNTQ0Ljg1OCA0MjYuMTE2IDUzMS40MzUgNDM1Ljc5NiA1MjEuNzA1IDQ0NS41MjUgNTExLjk4NiA0NTguOTA4IDUwNiA0NzMuNzUzIDUwNlpNNTA3LjQ1NiA1MjUuOTU5QzQ5OC44MzcgNTE3LjM0MSA0ODYuOTA2IDUxMS45ODYgNDczLjc1MyA1MTEuOTg2IDQ2MC42IDUxMS45ODYgNDQ4LjY2OCA1MTcuMzQxIDQ0MC4wNSA1MjUuOTU5IDQzMS40MzIgNTM0LjU4OCA0MjYuMDc2IDU0Ni41MiA0MjYuMDc2IDU1OS42NjIgNDI2LjA3NiA1NzIuODE1IDQzMS40MzIgNTg0Ljc0NyA0NDAuMDUgNTkzLjM2NSA0NDguNjY4IDYwMS45ODQgNDYwLjYgNjA3LjMzOSA0NzMuNzUzIDYwNy4zMzkgNDg2LjkwNiA2MDcuMzM5IDQ5OC44MzcgNjAxLjk4NCA1MDcuNDU2IDU5My4zNjUgNTE2LjA3NCA1ODQuNzQ3IDUyMS40MjkgNTcyLjgxNSA1MjEuNDI5IDU1OS42NjIgNTIxLjQzOSA1NDYuNTIgNTE2LjA4NCA1MzQuNTg4IDUwNy40NTYgNTI1Ljk1OVpNNDgzLjI5MiA1NDIuODk2QzQ4MS40MyA1NDIuODk2IDQ3OS45MDkgNTQ0LjQwNyA0NzkuOTA5IDU0Ni4yNzkgNDc5LjkwOSA1NDguMTUxIDQ4MS40MiA1NDkuNjYzIDQ4My4yOTIgNTQ5LjY2MyA0ODUuMTU0IDU0OS42NjMgNDg2LjY3NiA1NDguMTUxIDQ4Ni42NzYgNTQ2LjI3OSA0ODYuNjc2IDU0NC40MDcgNDg1LjE2NCA1NDIuODk2IDQ4My4yOTIgNTQyLjg5NloiPjwvcGF0aD48L2c+PC9nPjwvZz48L2c+PC9zdmc+"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE2MiIgd2lkdGg9IjE2MSI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxNjIiIHdpZHRoPSIxNjEiIHk9IjU1OCIgeD0iMjgwIj48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjE2MSIgd2lkdGg9IjE2MSIgeT0iNTU5IiB4PSIyODAiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTYxIiB3aWR0aD0iMTYxIiB5PSI1NTkiIHg9IjI4MCI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxNjEiIHdpZHRoPSIxNjEiIHk9IjU1OSIgeD0iMjgwIj48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4MCAtNTU4KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zNTkuMjU4IDYzMC4xNDVDMzU2LjM4MSA2MzAuMTQ1IDM1My41MTkgNjI5LjUgMzUxLjI4NyA2MjguNTU3TDMwNy4yNDcgNjA2Ljg2QzMwNC4zNyA2MDUuMjcyIDMwMi40NjggNjAzLjAyMyAzMDIuNDY4IDYwMC40NzYgMzAyLjQ2OCA1OTcuOTI5IDMwNC4wNzEgNTk1LjM2NyAzMDcuMjQ3IDU5My43NzlMMzUxLjYwMSA1NzEuMTIyQzM1NC4xNDggNTY5Ljg0OSAzNTcuMDI1IDU2OS4yMDQgMzYwLjIxNyA1NjkuMjA0IDM2My4wOTQgNTY5LjIwNCAzNjUuOTU2IDU2OS44NDkgMzY4LjE4OCA1NzAuNzkyTDQxMi4yMjggNTkyLjQ4OUM0MTUuMTA1IDU5NC4wNzcgNDE3LjAwNyA1OTYuMzI2IDQxNy4wMDcgNTk4Ljg3MyA0MTcuMDA3IDYwMS40MiA0MTUuNDE5IDYwMy45ODMgNDEyLjIyOCA2MDUuNTdMMzY3Ljg3NCA2MjguMjI3QzM2NS4zMTEgNjI5LjUgMzYyLjQ1IDYzMC4xNDUgMzU5LjI1OCA2MzAuMTQ1Wk0zMTAuNDM5IDYwMC4xNDYgMzU0LjQ3OCA2MjEuODQzQzM1NS43NTIgNjIyLjQ4OCAzNTcuMzU1IDYyMi44MDMgMzU5LjI1OCA2MjIuODAzIDM2MS4xNzYgNjIyLjgwMyAzNjMuMDk0IDYyMi40ODggMzY0LjM2OCA2MjEuODQzTDQwOS4wMzYgNTk5LjE4NyAzNjQuOTk3IDU3Ny40OUMzNjMuNzIzIDU3Ni44NDUgMzYyLjExOSA1NzYuNTMxIDM2MC4yMTcgNTc2LjUzMSAzNTguMjk5IDU3Ni41MzEgMzU2LjM4MSA1NzYuODQ1IDM1NS4xMDcgNTc3LjQ5TDMxMC40MzkgNjAwLjE0NlpNMzUwLjMxMiA3MDkuNTkyQzM0OC43MjQgNzA5LjU5MiAzNDcuMTIgNzA5LjI3NyAzNDUuNTMyIDcwOC4zMThMMzA1Ljk1OCA2ODcuNThDMzAxLjE3OCA2ODUuMzQ3IDI5Ny42NTcgNjgwLjIzNyAyOTcuNjU3IDY3Ni4wODdMMjk3LjY1NyA2MjAuNTdDMjk3LjY1NyA2MTYuNzM0IDMwMC41MzQgNjEzLjg3MiAzMDQuNjY5IDYxMy44NzIgMzA2LjI1NyA2MTMuODcyIDMwNy44NjEgNjE0LjE4NyAzMDkuNDQ5IDYxNS4xNDZMMzQ4LjcyNCA2MzUuODg0QzM1My41MDMgNjM4LjExNiAzNTcuMDI1IDY0My4yMjYgMzU3LjAyNSA2NDcuMzc3TDM1Ny4wMjUgNzAyLjg5NEMzNTcuMDI1IDcwNi43MyAzNTQuMTQ4IDcwOS41OTIgMzUwLjMxMiA3MDkuNTkyWk0zNDguNzI0IDcwMS45MzVDMzQ5LjAzOCA3MDIuMjQ5IDM0OS4zNjggNzAyLjI0OSAzNDkuNjgzIDcwMi4yNDlMMzQ5LjY4MyA2NDcuMzc3QzM0OS42ODMgNjQ2LjEwNCAzNDguMDk1IDY0My41NDEgMzQ1LjUzMiA2NDIuMjY3TDMwNS45NTggNjIxLjUyOUMzMDUuNjQ0IDYyMS4yMTUgMzA1LjMxMyA2MjEuMjE1IDMwNC45OTkgNjIxLjIxNUwzMDQuOTk5IDY3Ni4xMDJDMzA0Ljk5OSA2NzcuMzc2IDMwNi42MDMgNjc5LjkzOSAzMDkuMTUgNjgxLjIxMkwzNDguNzI0IDcwMS45MzVaTTM3MS4zOCA3MDkuNTkyQzM2Ny41NDQgNzA5LjU5MiAzNjQuNjgyIDcwNi43MTQgMzY0LjY4MiA3MDIuODk0TDM2NC42ODIgNjQ3LjM3N0MzNjQuNjgyIDY0My4yMjYgMzY4LjE4OCA2MzguMTE2IDM3Mi45ODQgNjM1Ljg4NEw0MTIuMjI4IDYxNS4xNDZDNDEzLjgxNiA2MTQuNTAxIDQxNS40MTkgNjEzLjg3MiA0MTcuMDA3IDYxMy44NzIgNDIwLjg0NCA2MTMuODcyIDQyMy43MDUgNjE2Ljc0OSA0MjMuNzA1IDYyMC41N0w0MjMuNzA1IDY3Ni4wODdDNDIzLjcwNSA2ODAuMjM3IDQyMC4xOTkgNjg1LjM0NyA0MTUuNDA0IDY4Ny41OEwzNzYuMTYgNzA4LjMxOEMzNzQuMjQyIDcwOS4yNzcgMzcyLjk2OCA3MDkuNTkyIDM3MS4zOCA3MDkuNTkyWk00MTUuNDA0IDYyMS41MjkgMzc2LjE2IDY0Mi4yNjdDMzczLjYxMyA2NDMuNTQxIDM3Mi4wMDkgNjQ2LjEwNCAzNzIuMDA5IDY0Ny4zNzdMMzcyLjAwOSA3MDIuMjY1QzM3Mi4zMjMgNzAyLjI2NSAzNzIuNjU0IDcwMS45NSAzNzIuOTY4IDcwMS45NUw0MTIuMjEyIDY4MS4yMTJDNDE0Ljc1OSA2NzkuOTM5IDQxNi4zNjMgNjc3LjM3NiA0MTYuMzYzIDY3Ni4xMDJMNDE2LjM2MyA2MjEuMjE1QzQxNi4wNDggNjIxLjIxNSA0MTUuNzM0IDYyMS41MjkgNDE1LjQwNCA2MjEuNTI5WiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 532,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE2MiIgd2lkdGg9IjE2MSI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxNjIiIHdpZHRoPSIxNjEiIHk9IjU1OCIgeD0iMjgwIj48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjE2MSIgd2lkdGg9IjE2MSIgeT0iNTU5IiB4PSIyODAiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTYxIiB3aWR0aD0iMTYxIiB5PSI1NTkiIHg9IjI4MCI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxNjEiIHdpZHRoPSIxNjEiIHk9IjU1OSIgeD0iMjgwIj48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTI4MCAtNTU4KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNGRkZGRkYiIGQ9Ik0zNTkuMjU4IDYzMC4xNDVDMzU2LjM4MSA2MzAuMTQ1IDM1My41MTkgNjI5LjUgMzUxLjI4NyA2MjguNTU3TDMwNy4yNDcgNjA2Ljg2QzMwNC4zNyA2MDUuMjcyIDMwMi40NjggNjAzLjAyMyAzMDIuNDY4IDYwMC40NzYgMzAyLjQ2OCA1OTcuOTI5IDMwNC4wNzEgNTk1LjM2NyAzMDcuMjQ3IDU5My43NzlMMzUxLjYwMSA1NzEuMTIyQzM1NC4xNDggNTY5Ljg0OSAzNTcuMDI1IDU2OS4yMDQgMzYwLjIxNyA1NjkuMjA0IDM2My4wOTQgNTY5LjIwNCAzNjUuOTU2IDU2OS44NDkgMzY4LjE4OCA1NzAuNzkyTDQxMi4yMjggNTkyLjQ4OUM0MTUuMTA1IDU5NC4wNzcgNDE3LjAwNyA1OTYuMzI2IDQxNy4wMDcgNTk4Ljg3MyA0MTcuMDA3IDYwMS40MiA0MTUuNDE5IDYwMy45ODMgNDEyLjIyOCA2MDUuNTdMMzY3Ljg3NCA2MjguMjI3QzM2NS4zMTEgNjI5LjUgMzYyLjQ1IDYzMC4xNDUgMzU5LjI1OCA2MzAuMTQ1Wk0zMTAuNDM5IDYwMC4xNDYgMzU0LjQ3OCA2MjEuODQzQzM1NS43NTIgNjIyLjQ4OCAzNTcuMzU1IDYyMi44MDMgMzU5LjI1OCA2MjIuODAzIDM2MS4xNzYgNjIyLjgwMyAzNjMuMDk0IDYyMi40ODggMzY0LjM2OCA2MjEuODQzTDQwOS4wMzYgNTk5LjE4NyAzNjQuOTk3IDU3Ny40OUMzNjMuNzIzIDU3Ni44NDUgMzYyLjExOSA1NzYuNTMxIDM2MC4yMTcgNTc2LjUzMSAzNTguMjk5IDU3Ni41MzEgMzU2LjM4MSA1NzYuODQ1IDM1NS4xMDcgNTc3LjQ5TDMxMC40MzkgNjAwLjE0NlpNMzUwLjMxMiA3MDkuNTkyQzM0OC43MjQgNzA5LjU5MiAzNDcuMTIgNzA5LjI3NyAzNDUuNTMyIDcwOC4zMThMMzA1Ljk1OCA2ODcuNThDMzAxLjE3OCA2ODUuMzQ3IDI5Ny42NTcgNjgwLjIzNyAyOTcuNjU3IDY3Ni4wODdMMjk3LjY1NyA2MjAuNTdDMjk3LjY1NyA2MTYuNzM0IDMwMC41MzQgNjEzLjg3MiAzMDQuNjY5IDYxMy44NzIgMzA2LjI1NyA2MTMuODcyIDMwNy44NjEgNjE0LjE4NyAzMDkuNDQ5IDYxNS4xNDZMMzQ4LjcyNCA2MzUuODg0QzM1My41MDMgNjM4LjExNiAzNTcuMDI1IDY0My4yMjYgMzU3LjAyNSA2NDcuMzc3TDM1Ny4wMjUgNzAyLjg5NEMzNTcuMDI1IDcwNi43MyAzNTQuMTQ4IDcwOS41OTIgMzUwLjMxMiA3MDkuNTkyWk0zNDguNzI0IDcwMS45MzVDMzQ5LjAzOCA3MDIuMjQ5IDM0OS4zNjggNzAyLjI0OSAzNDkuNjgzIDcwMi4yNDlMMzQ5LjY4MyA2NDcuMzc3QzM0OS42ODMgNjQ2LjEwNCAzNDguMDk1IDY0My41NDEgMzQ1LjUzMiA2NDIuMjY3TDMwNS45NTggNjIxLjUyOUMzMDUuNjQ0IDYyMS4yMTUgMzA1LjMxMyA2MjEuMjE1IDMwNC45OTkgNjIxLjIxNUwzMDQuOTk5IDY3Ni4xMDJDMzA0Ljk5OSA2NzcuMzc2IDMwNi42MDMgNjc5LjkzOSAzMDkuMTUgNjgxLjIxMkwzNDguNzI0IDcwMS45MzVaTTM3MS4zOCA3MDkuNTkyQzM2Ny41NDQgNzA5LjU5MiAzNjQuNjgyIDcwNi43MTQgMzY0LjY4MiA3MDIuODk0TDM2NC42ODIgNjQ3LjM3N0MzNjQuNjgyIDY0My4yMjYgMzY4LjE4OCA2MzguMTE2IDM3Mi45ODQgNjM1Ljg4NEw0MTIuMjI4IDYxNS4xNDZDNDEzLjgxNiA2MTQuNTAxIDQxNS40MTkgNjEzLjg3MiA0MTcuMDA3IDYxMy44NzIgNDIwLjg0NCA2MTMuODcyIDQyMy43MDUgNjE2Ljc0OSA0MjMuNzA1IDYyMC41N0w0MjMuNzA1IDY3Ni4wODdDNDIzLjcwNSA2ODAuMjM3IDQyMC4xOTkgNjg1LjM0NyA0MTUuNDA0IDY4Ny41OEwzNzYuMTYgNzA4LjMxOEMzNzQuMjQyIDcwOS4yNzcgMzcyLjk2OCA3MDkuNTkyIDM3MS4zOCA3MDkuNTkyWk00MTUuNDA0IDYyMS41MjkgMzc2LjE2IDY0Mi4yNjdDMzczLjYxMyA2NDMuNTQxIDM3Mi4wMDkgNjQ2LjEwNCAzNzIuMDA5IDY0Ny4zNzdMMzcyLjAwOSA3MDIuMjY1QzM3Mi4zMjMgNzAyLjI2NSAzNzIuNjU0IDcwMS45NSAzNzIuOTY4IDcwMS45NUw0MTIuMjEyIDY4MS4yMTJDNDE0Ljc1OSA2NzkuOTM5IDQxNi4zNjMgNjc3LjM3NiA0MTYuMzYzIDY3Ni4xMDJMNDE2LjM2MyA2MjEuMjE1QzQxNi4wNDggNjIxLjIxNSA0MTUuNzM0IDYyMS41MjkgNDE1LjQwNCA2MjEuNTI5WiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 760,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEyMyIgd2lkdGg9IjEyMyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxMjMiIHdpZHRoPSIxMjMiIHk9IjI5OCIgeD0iNTc4Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjEyMiIgd2lkdGg9IjEyMiIgeT0iMjk5IiB4PSI1NzkiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTIyIiB3aWR0aD0iMTIyIiB5PSIyOTkiIHg9IjU3OSI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxMjIiIHdpZHRoPSIxMjIiIHk9IjI5OSIgeD0iNTc5Ij48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTU3OCAtMjk4KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4wMDgyIDAgMCAxIDU3OS4wOTEgMjk5KSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik01My4yMzYgMEM4Mi42NDI5LTAuMDAzODc1OTIgMTA2LjQ4NSAyMy44MzIgMTA2LjQ4OSA1My4yMzg5IDEwNi40OSA2My41OTk5IDEwMy40NjkgNzMuNzM2MyA5Ny43OTQ2IDgyLjQwNTZMMTIwLjgyOCAxMDcuNTE0IDEwNC45NDMgMTIyLjA0IDgyLjcyMzMgOTcuNTU2M0M1OC4yNDU5IDExMy44NDUgMjUuMTk4OSAxMDcuMjA2IDguOTEwOTMgODIuNzI4MS03LjM3NzA5IDU4LjI1MDYtMC43MzgyNTUgMjUuMjAzNyAyMy43MzkyIDguOTE1NjkgMzIuNDc3NSAzLjEwMDkzIDQyLjczOTgtMC4wMDA5MzM3MDkgNTMuMjM2IDQuNzA1MjdlLTA2Wk00NS42NzA2IDYzLjI4MzUgNDUuNjcwNiA2Mi4wMjI2QzQ1LjYxNDUgNTkuNjg3MyA0NS44NDExIDU3LjM1MzcgNDYuMzQ1NyA1NS4wNzI4IDQ3Ljc0NTYgNDkuODMwNiA1MC45MzI2IDQ4Ljg3NzQgNTQuNjg1NiA0NS45NDg2IDU2LjI3NDEgNDQuNzM3MyA1Ny41NjQ4IDQzLjIyODIgNTcuNTY0OCA0MS4xNDMyIDU3LjU2NDggMzcuMzYwNSA1My4yODU2IDM1LjY1MjggNTAuMjE3OCAzNy4zODA0IDQ4LjU1NzQgMzguMjU5MSA0Ny41MzUyIDM5Ljk5OTggNDcuNTc2OCA0MS44Nzc5TDM0LjEwNCA0MS44Nzc5QzM0LjEwNCAzNS4wNTcxIDM3LjA4MjUgMjkuNzM1NSA0My41ODU2IDI3LjE0NDIgNDkuODU5NiAyNC44ODkxIDU2LjcyMDIgMjQuODcxNSA2My4wMDU1IDI3LjA5NDYgNjkuMDEyMiAyOS4zMzg0IDcyLjUyNjkgMzMuNzc2NCA3Mi41MjY5IDQwLjI4OTQgNzIuNTg2OCA0Mi4yMjIxIDcyLjIzMTQgNDQuMTQ1MiA3MS40ODQ0IDQ1LjkyODcgNjguODQzNCA1MS43MzY4IDY0LjczMzEgNTIuMTQzOSA2MC43NTE4IDU1Ljc3NzcgNTguMjc5NiA1OC4wMTE2IDU4LjE1MDYgNjAuMjI1NiA1OC4xNTA2IDYzLjI4MzVaTTUyLjA5NDIgODAuOTc1OUM1MC4xMzUxIDgxLjAwNyA0OC4yNDg0IDgwLjIzNTcgNDYuODcxOSA3OC44NDEzIDQ1LjQ1MyA3Ny40Nzk4IDQ0LjY3MTMgNzUuNTg0OSA0NC43MTc0IDczLjYxOSA0NC42ODk4IDcxLjY4NjUgNDUuNDc1MiA2OS44MzEyIDQ2Ljg4MTggNjguNTA1OSA0OS43NDQ3IDY1LjY3MyA1NC4zNTQ1IDY1LjY3MyA1Ny4yMTczIDY4LjUwNTkgNTguNjYyMiA2OS44MjUxIDU5LjQ4MzkgNzEuNjkyMyA1OS40ODEgNzMuNjQ4OCA1OS40NzAyIDc0Ljk2MTMgNTkuMDk5MyA3Ni4yNDU3IDU4LjQwODcgNzcuMzYyIDU3LjczNjUgNzguNDUzOSA1Ni44MDk5IDc5LjM2NjggNTUuNzA4MiA4MC4wMjI4IDU0LjYyMjUgODAuNjgyNCA1My4zNzQ0IDgxLjAyNjMgNTIuMTA0MiA4MS4wMTU2Wk04Ni42NzQ4IDE5Ljc4NzNDNjguMTc3OSAxLjM0MTQ3IDM4LjIzIDEuMzgyODcgMTkuNzg0MiAxOS44Nzk3IDEuMzM4NDQgMzguMzc2NiAxLjM3OTgyIDY4LjMyNDUgMTkuODc2NiA4Ni43NzAzIDM4LjM3MzUgMTA1LjIxNiA2OC4zMjE1IDEwNS4xNzQgODYuNzY3MiA4Ni42Nzc5IDk1LjYxOTcgNzcuODAwOSAxMDAuNTg1IDY1Ljc3MjYgMTAwLjU3NSA1My4yMzYgMTAwLjU4MSA0MC42ODAzIDk1LjU3NzcgMjguNjQwOCA4Ni42NzQ4IDE5Ljc4NzNaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 1216,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEyMyIgd2lkdGg9IjEyMyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxMjMiIHdpZHRoPSIxMjMiIHk9IjI5OCIgeD0iNTc4Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjEyMiIgd2lkdGg9IjEyMiIgeT0iMjk5IiB4PSI1NzkiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTIyIiB3aWR0aD0iMTIyIiB5PSIyOTkiIHg9IjU3OSI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxMjIiIHdpZHRoPSIxMjIiIHk9IjI5OSIgeD0iNTc5Ij48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTU3OCAtMjk4KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4wMDgyIDAgMCAxIDU3OS4wOTEgMjk5KSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik01My4yMzYgMEM4Mi42NDI5LTAuMDAzODc1OTIgMTA2LjQ4NSAyMy44MzIgMTA2LjQ4OSA1My4yMzg5IDEwNi40OSA2My41OTk5IDEwMy40NjkgNzMuNzM2MyA5Ny43OTQ2IDgyLjQwNTZMMTIwLjgyOCAxMDcuNTE0IDEwNC45NDMgMTIyLjA0IDgyLjcyMzMgOTcuNTU2M0M1OC4yNDU5IDExMy44NDUgMjUuMTk4OSAxMDcuMjA2IDguOTEwOTMgODIuNzI4MS03LjM3NzA5IDU4LjI1MDYtMC43MzgyNTUgMjUuMjAzNyAyMy43MzkyIDguOTE1NjkgMzIuNDc3NSAzLjEwMDkzIDQyLjczOTgtMC4wMDA5MzM3MDkgNTMuMjM2IDQuNzA1MjdlLTA2Wk00NS42NzA2IDYzLjI4MzUgNDUuNjcwNiA2Mi4wMjI2QzQ1LjYxNDUgNTkuNjg3MyA0NS44NDExIDU3LjM1MzcgNDYuMzQ1NyA1NS4wNzI4IDQ3Ljc0NTYgNDkuODMwNiA1MC45MzI2IDQ4Ljg3NzQgNTQuNjg1NiA0NS45NDg2IDU2LjI3NDEgNDQuNzM3MyA1Ny41NjQ4IDQzLjIyODIgNTcuNTY0OCA0MS4xNDMyIDU3LjU2NDggMzcuMzYwNSA1My4yODU2IDM1LjY1MjggNTAuMjE3OCAzNy4zODA0IDQ4LjU1NzQgMzguMjU5MSA0Ny41MzUyIDM5Ljk5OTggNDcuNTc2OCA0MS44Nzc5TDM0LjEwNCA0MS44Nzc5QzM0LjEwNCAzNS4wNTcxIDM3LjA4MjUgMjkuNzM1NSA0My41ODU2IDI3LjE0NDIgNDkuODU5NiAyNC44ODkxIDU2LjcyMDIgMjQuODcxNSA2My4wMDU1IDI3LjA5NDYgNjkuMDEyMiAyOS4zMzg0IDcyLjUyNjkgMzMuNzc2NCA3Mi41MjY5IDQwLjI4OTQgNzIuNTg2OCA0Mi4yMjIxIDcyLjIzMTQgNDQuMTQ1MiA3MS40ODQ0IDQ1LjkyODcgNjguODQzNCA1MS43MzY4IDY0LjczMzEgNTIuMTQzOSA2MC43NTE4IDU1Ljc3NzcgNTguMjc5NiA1OC4wMTE2IDU4LjE1MDYgNjAuMjI1NiA1OC4xNTA2IDYzLjI4MzVaTTUyLjA5NDIgODAuOTc1OUM1MC4xMzUxIDgxLjAwNyA0OC4yNDg0IDgwLjIzNTcgNDYuODcxOSA3OC44NDEzIDQ1LjQ1MyA3Ny40Nzk4IDQ0LjY3MTMgNzUuNTg0OSA0NC43MTc0IDczLjYxOSA0NC42ODk4IDcxLjY4NjUgNDUuNDc1MiA2OS44MzEyIDQ2Ljg4MTggNjguNTA1OSA0OS43NDQ3IDY1LjY3MyA1NC4zNTQ1IDY1LjY3MyA1Ny4yMTczIDY4LjUwNTkgNTguNjYyMiA2OS44MjUxIDU5LjQ4MzkgNzEuNjkyMyA1OS40ODEgNzMuNjQ4OCA1OS40NzAyIDc0Ljk2MTMgNTkuMDk5MyA3Ni4yNDU3IDU4LjQwODcgNzcuMzYyIDU3LjczNjUgNzguNDUzOSA1Ni44MDk5IDc5LjM2NjggNTUuNzA4MiA4MC4wMjI4IDU0LjYyMjUgODAuNjgyNCA1My4zNzQ0IDgxLjAyNjMgNTIuMTA0MiA4MS4wMTU2Wk04Ni42NzQ4IDE5Ljc4NzNDNjguMTc3OSAxLjM0MTQ3IDM4LjIzIDEuMzgyODcgMTkuNzg0MiAxOS44Nzk3IDEuMzM4NDQgMzguMzc2NiAxLjM3OTgyIDY4LjMyNDUgMTkuODc2NiA4Ni43NzAzIDM4LjM3MzUgMTA1LjIxNiA2OC4zMjE1IDEwNS4xNzQgODYuNzY3MiA4Ni42Nzc5IDk1LjYxOTcgNzcuODAwOSAxMDAuNTg1IDY1Ljc3MjYgMTAwLjU3NSA1My4yMzYgMTAwLjU4MSA0MC42ODAzIDk1LjU3NzcgMjguNjQwOCA4Ni42NzQ4IDE5Ljc4NzNaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 988,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjEyMyIgd2lkdGg9IjEyMyI+PGRlZnM+PGNsaXBQYXRoIGlkPSJjbGlwMCI+PHJlY3QgaGVpZ2h0PSIxMjMiIHdpZHRoPSIxMjMiIHk9IjI5OCIgeD0iNTc4Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAxIj48cmVjdCBoZWlnaHQ9IjEyMiIgd2lkdGg9IjEyMiIgeT0iMjk5IiB4PSI1NzkiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTIyIiB3aWR0aD0iMTIyIiB5PSIyOTkiIHg9IjU3OSI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMyI+PHJlY3QgaGVpZ2h0PSIxMjIiIHdpZHRoPSIxMjIiIHk9IjI5OSIgeD0iNTc5Ij48L3JlY3Q+PC9jbGlwUGF0aD48L2RlZnM+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTU3OCAtMjk4KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAxKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAyKSI+PGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAzKSI+PHBhdGggdHJhbnNmb3JtPSJtYXRyaXgoMS4wMDgyIDAgMCAxIDU3OS4wOTEgMjk5KSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRkZGRkYiIGQ9Ik01My4yMzYgMEM4Mi42NDI5LTAuMDAzODc1OTIgMTA2LjQ4NSAyMy44MzIgMTA2LjQ4OSA1My4yMzg5IDEwNi40OSA2My41OTk5IDEwMy40NjkgNzMuNzM2MyA5Ny43OTQ2IDgyLjQwNTZMMTIwLjgyOCAxMDcuNTE0IDEwNC45NDMgMTIyLjA0IDgyLjcyMzMgOTcuNTU2M0M1OC4yNDU5IDExMy44NDUgMjUuMTk4OSAxMDcuMjA2IDguOTEwOTMgODIuNzI4MS03LjM3NzA5IDU4LjI1MDYtMC43MzgyNTUgMjUuMjAzNyAyMy43MzkyIDguOTE1NjkgMzIuNDc3NSAzLjEwMDkzIDQyLjczOTgtMC4wMDA5MzM3MDkgNTMuMjM2IDQuNzA1MjdlLTA2Wk00NS42NzA2IDYzLjI4MzUgNDUuNjcwNiA2Mi4wMjI2QzQ1LjYxNDUgNTkuNjg3MyA0NS44NDExIDU3LjM1MzcgNDYuMzQ1NyA1NS4wNzI4IDQ3Ljc0NTYgNDkuODMwNiA1MC45MzI2IDQ4Ljg3NzQgNTQuNjg1NiA0NS45NDg2IDU2LjI3NDEgNDQuNzM3MyA1Ny41NjQ4IDQzLjIyODIgNTcuNTY0OCA0MS4xNDMyIDU3LjU2NDggMzcuMzYwNSA1My4yODU2IDM1LjY1MjggNTAuMjE3OCAzNy4zODA0IDQ4LjU1NzQgMzguMjU5MSA0Ny41MzUyIDM5Ljk5OTggNDcuNTc2OCA0MS44Nzc5TDM0LjEwNCA0MS44Nzc5QzM0LjEwNCAzNS4wNTcxIDM3LjA4MjUgMjkuNzM1NSA0My41ODU2IDI3LjE0NDIgNDkuODU5NiAyNC44ODkxIDU2LjcyMDIgMjQuODcxNSA2My4wMDU1IDI3LjA5NDYgNjkuMDEyMiAyOS4zMzg0IDcyLjUyNjkgMzMuNzc2NCA3Mi41MjY5IDQwLjI4OTQgNzIuNTg2OCA0Mi4yMjIxIDcyLjIzMTQgNDQuMTQ1MiA3MS40ODQ0IDQ1LjkyODcgNjguODQzNCA1MS43MzY4IDY0LjczMzEgNTIuMTQzOSA2MC43NTE4IDU1Ljc3NzcgNTguMjc5NiA1OC4wMTE2IDU4LjE1MDYgNjAuMjI1NiA1OC4xNTA2IDYzLjI4MzVaTTUyLjA5NDIgODAuOTc1OUM1MC4xMzUxIDgxLjAwNyA0OC4yNDg0IDgwLjIzNTcgNDYuODcxOSA3OC44NDEzIDQ1LjQ1MyA3Ny40Nzk4IDQ0LjY3MTMgNzUuNTg0OSA0NC43MTc0IDczLjYxOSA0NC42ODk4IDcxLjY4NjUgNDUuNDc1MiA2OS44MzEyIDQ2Ljg4MTggNjguNTA1OSA0OS43NDQ3IDY1LjY3MyA1NC4zNTQ1IDY1LjY3MyA1Ny4yMTczIDY4LjUwNTkgNTguNjYyMiA2OS44MjUxIDU5LjQ4MzkgNzEuNjkyMyA1OS40ODEgNzMuNjQ4OCA1OS40NzAyIDc0Ljk2MTMgNTkuMDk5MyA3Ni4yNDU3IDU4LjQwODcgNzcuMzYyIDU3LjczNjUgNzguNDUzOSA1Ni44MDk5IDc5LjM2NjggNTUuNzA4MiA4MC4wMjI4IDU0LjYyMjUgODAuNjgyNCA1My4zNzQ0IDgxLjAyNjMgNTIuMTA0MiA4MS4wMTU2Wk04Ni42NzQ4IDE5Ljc4NzNDNjguMTc3OSAxLjM0MTQ3IDM4LjIzIDEuMzgyODcgMTkuNzg0MiAxOS44Nzk3IDEuMzM4NDQgMzguMzc2NiAxLjM3OTgyIDY4LjMyNDUgMTkuODc2NiA4Ni43NzAzIDM4LjM3MzUgMTA1LjIxNiA2OC4zMjE1IDEwNS4xNzQgODYuNzY3MiA4Ni42Nzc5IDk1LjYxOTcgNzcuODAwOSAxMDAuNTg1IDY1Ljc3MjYgMTAwLjU3NSA1My4yMzYgMTAwLjU4MSA0MC42ODAzIDk1LjU3NzcgMjguNjQwOCA4Ni42NzQ4IDE5Ljc4NzNaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+    },
+    {
+      "name": "Host Unit",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 0,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "today"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.host_unit_consumption",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.host_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.host_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "DEM Units",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 228,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "today"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.dem_unit_consumption",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.dem_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.dem_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "DDUs",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 456,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "today"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.ddu_unit_consumption",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.ddu_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.ddu_unit_consumption:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Request Attribute",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 0,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.request_attributes",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.request_attributes:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.request_attributes:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Alerting Profile",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 228,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.alerting_profile",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.alerting_profile:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.alerting_profile:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Process Group",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 456,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.process_groups",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.process_groups:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.process_groups:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Tagging",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 684,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.tags",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.tags:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.tags:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Management Zone",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 342,
+        "left": 912,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.mgmt_zone",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.mgmt_zone:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.mgmt_zone:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Session Replay",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 0,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.session_replay",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.session_replay:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.session_replay:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Key Requests",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 228,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.key_requests",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.key_requests:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.key_requests:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Total Problem Reported",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 266,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Total Problems",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Total Problems\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Total Problems\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "MTTR",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 798,
+        "left": 0,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-24h to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dimension",
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Mean Resolution Time",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Mean Resolution Time\")))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Error",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 0,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Error Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Error Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Error Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Availability",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 190,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Infrastructure Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 3,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Infrastructure Problem\")))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Infrastructure Problem\")))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Performance",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 380,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Application Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Resource",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 570,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Resource Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 5,
+                "color": "#dc172a"
+              },
+              {
+                "value": 5,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Resource Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Resource Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Custom",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1026,
+        "left": 760,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Custom Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Custom Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Custom Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Application",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1254,
+        "left": 0,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Application Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Environment",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1254,
+        "left": 190,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Environment Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Environment Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Environment Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Service",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1254,
+        "left": 380,
+        "width": 190,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-1d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dimension"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Service Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Service Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(eq(dimension,\"Service Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1254,
+        "left": 570,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {},
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Infrastructure Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Infrastructure Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))),or(eq(dimension,\"Infrastructure Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Consumption details by host group",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 2090,
+        "left": 0,
+        "width": 950,
+        "height": 494
+      },
+      "tileFilter": {
+        "timeframe": "today"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "consumption.hostUnits",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "host_group"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Host Units"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showSparkLine": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "A",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(consumption.hostUnits:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy(host_group):median:auto:sort(value(median,descending)):limit(10)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Conversion Goals",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 684,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.conversion_goals",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.conversion_goals:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.conversion_goals:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Session Properties",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 456,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-7d to now"
+      },
+      "customName": "Single value",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.dt_health_report.databases.session_properties",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.dt_health_report.databases.session_properties:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10)):limit(100):names",
+        "resolution=null&(ext:tech.dt_health_report.databases.session_properties:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy():avg:auto:sort(value(avg,descending)):limit(10))"
+      ]
+    },
+    {
+      "name": "Consumption details by management zone",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 0,
+        "width": 950,
+        "height": 532
+      },
+      "tileFilter": {
+        "timeframe": "today"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "consumption.hostUnits",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "consumption.demUnits",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Dynatrace Tenant Health Metrics - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Host Units"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "DEM Units"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showSparkLine": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "A",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(consumption.hostUnits:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy(mgmt_zone):median:auto:sort(value(median,descending)):limit(10)):limit(100):names,(consumption.demUnits:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Dynatrace Tenant Health Metrics - $1~\")\"))))):splitBy(mgmt_zone):median:auto:sort(value(median,descending)):limit(10)):limit(100):names"
+      ]
+    }
+  ]
+}
