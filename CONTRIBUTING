@@ -1,0 +1,28 @@
+# Contributing to Insightfy
+
+- [Contributing to Insighty](#contributing-to-the-monitoring-as-code-tool)
+  - [What to contribute](#what-to-contribute)
+  - [How to contribute](#how-to-contribute)
+
+## What to contribute
+
+This tool was created out of the following use cases but not limited to:
+
+* Provide an easy way to generate key business impacting metrics leveraging on Dynatrace APIs
+    - License Metrics
+    - Feature Flags
+    - Problem Analysis
+    - Incident Metrics
+
+* Create Customized Benefits Valuation/Dashboard Reports based on above metrics
+* Dashboard Reports
+* Single Value Trends
+* Setting Custom Alerts
+* Compare consumption or adoption metrics across different endpoints
+
+## How to contribute
+
+You are welcome to contribute to Insightfy.
+Use issues for discussing proposals or to raise a question.
+If you have improvements to Dynatrace Operator, please submit your pull request.
+For those just getting started, consult this  [guide](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
