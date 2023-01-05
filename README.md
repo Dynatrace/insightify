@@ -4,7 +4,7 @@ Insightify Extension is an activeGate extension that is developed to pull and re
 
 ## Supported lifecycle
 
-Please note that this is an **opensource extension** and not maintained by Dynatrace. The purpose of this extension is to help to drive adoption and customer engagement. And also along, providing avenues to generate alerts, and guide customers to understand their Dynatrace maturity journey and bring about business value realization.
+Please note that this is an **opensource extension** and not maintained by Dynatrace. The purpose of this extension is to help to drive adoption and customer engagement. This will ultimately guide customers along their Dynatrace maturity journey and bring about business value realization.
 
 ## Documentation
 
