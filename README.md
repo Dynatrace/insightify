@@ -12,7 +12,7 @@ Please refer to the link [here](https://nikhilgoenkatech.github.io/insightify-do
 
 ## Contributing
 
-See [CONTRIBUTING](CONTRIBUTING.md) for details on submitting changes.
+See [CONTRIBUTING](CONTRIBUTING) for details on submitting changes.
 
 ## License
 
