@@ -1,19 +1,41 @@
-# Insightfy extension
+# Website
 
-Insightify Extension is an activeGate extension that is developed to pull and report key metrics. It leverages Dynatrace APIs to pull the metrics from the configured tenant. It will enable your customer to get a single pane of all the different health metrics in the tenant itself highlighting some of the usage and adoption features in Dynatrace.
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
-## Supported lifecycle
+### Installation
 
-Please note that this is an **opensource extension** and not maintained by Dynatrace. The purpose of this extension is to help to drive adoption and customer engagement. This will ultimately guide customers along their Dynatrace maturity journey and bring about business value realization.
+```
+$ yarn
+```
 
-## Documentation
+### Local Development
 
-Please refer to the link [here](https://nikhilgoenkatech.github.io/insightify-documentation/docs/get-started) for the full documentation.
+```
+$ yarn start
+```
 
-## Contributing
+This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-See [CONTRIBUTING](CONTRIBUTING) for details on submitting changes.
+### Build
 
-## License
+```
+$ yarn build
+```
 
-Insightfy is under Apache 2.0 license. See [LICENSE](LICENSE) for details.
+This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Deployment
+
+Using SSH:
+
+```
+$ USE_SSH=true yarn deploy
+```
+
+Not using SSH:
+
+```
+$ GIT_USER=<Your GitHub username> yarn deploy
+```
+
+If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
