@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Insightify Extension",
   tagline: "Reporting Dynatrace Key Metrics Easily",
-  url: 'https://dynatrace.github.io/',
+  url: 'https://dynatrace.github.io',
   baseUrl: '/',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
