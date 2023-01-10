@@ -9,7 +9,7 @@ const config = {
   title: "Insightify Extension",
   tagline: "Reporting Dynatrace Key Metrics Easily",
   url: 'https://dynatrace.github.io',
-  baseUrl: '/',
+  baseUrl: '/insightfy/',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
