@@ -70,7 +70,7 @@ const config = {
             label: "Docs"
           },
           {
-            href: "https://github.com/nikhilgoenkatech/insightify",
+            href: "https://dynatrace.github.io/insightify",
             label: "GitHub",
             position: "right"
           }
