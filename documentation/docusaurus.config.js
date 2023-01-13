@@ -8,16 +8,16 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Insightify Extension",
   tagline: "Reporting Dynatrace Key Metrics Easily",
-  url: 'https://Dynatrace.github.io',
-  baseUrl: '/Insightify/',
+  url: 'https://dynatrace.github.io',
+  baseUrl: '/insightify/',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Dynatrace',
-  projectName: 'Insightify',
+  organizationName: 'dynatrace',
+  projectName: 'insightify',
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -70,7 +70,7 @@ const config = {
             label: "Docs"
           },
           {
-            href: "https://github.com/Dynatrace/Insightify",
+            href: "https://github.com/dynatrace/insightify",
             label: "GitHub",
             position: "right"
           }
