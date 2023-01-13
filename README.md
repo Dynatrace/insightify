@@ -8,7 +8,7 @@ Please note that this is an **opensource extension** and not maintained by Dynat
 
 ## Documentation
 
-Please refer to the link [here](https://nikhilgoenkatech.github.io/insightify-documentation/docs/get-started) for the full documentation.
+Please refer to the link [here](https://dynatrace.github.io/insightify/docs/intro) for the full documentation.
 
 ## Contributing
 
