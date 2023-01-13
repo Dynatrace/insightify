@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdt_adoptionoverview_extension=self.webpackChunkdt_adoptionoverview_extension||[]).push([[462],{9165:s=>{s.exports=JSON.parse('{"label":"docusaurus","permalink":"/insightify/blog/tags/docusaurus","allTagsPath":"/insightify/blog/tags","count":4}')}}]);
