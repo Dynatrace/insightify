@@ -32,30 +32,29 @@ profiles. etc.)
 3. Unzip the ZIP file to the `plugin_deployment` (found at `/opt/dynatrace/remotepluginmodule/plugin_deployment/`) directory of your ActiveGate host.  
 4. In the Dynatrace menu, go to **Settings > Monitored technologies > Custom extensions and select Upload Extension.**  
 5. Upload the ZIP file.  
-6. Upload the zip file to the activeGate where you plan to run the extension from at ``. 
-6. Enter the following endpoint information for pulling data:  
-
-   **Endpoint name**: Any label to identify this connection. It is used for identification purposes.
-   **Tenant URL**:    Tenant endpoint that you'd like to pull data from. Configure it as `https://abc.live.dynatrace.com/api/v1/`  
-                      Replace abc with the tenant UUID for SaaS while for managed, configure the endpoint as `https://managed-server/e/environment-endpoint/api/v1`  
-   **Tenant Token**: Token that will be used to pull the data from the configured tenant. Make sure your token has the following permissions:  
-                     1. Read problems (API v1)  
-                     2. Read problems (API v2)  
-                     3. User session query language (API v1)  
-                     4. CaptureRequestData (API v1)  
-                     5. Read metrics (API v2)  
-**Publish URL**:     Tenant where you would like to push the pulled metrics. Configure it as `http://xyz.live.dynatrace.com/api/v2/`  
+6. Once uploaded, unzip the zip file at the same location.   
+7. Enter the following endpoint information for pulling data:  
+   Endpoint name - Any label to identify this connection. It is used for identification purposes.
+   Tenant URL -    Tenant endpoint that you'd like to pull data from. Configure it as `https://abc.live.dynatrace.com/api/v1/`  
+                   Replace abc with the tenant UUID for SaaS while for managed, configure the endpoint as `https://managed-server/e/environment-endpoint/api/v1`  
+   Tenant Token: Token that will be used to pull the data from the configured tenant. Make sure your token has the following permissions  
+   1. Read problems (API v1)  
+   2. Read problems (API v2)  
+   3. User session query language (API v1)  
+   4. CaptureRequestData (API v1)  
+   5. Read metrics (API v2)  
+   Publish URL -     Tenant where you would like to push the pulled metrics. Configure it as `http://xyz.live.dynatrace.com/api/v2/`  
                      Replace abc with the tenant UUID for SaaS while for managed, configure the endpoint as `https://managed-server/e/environment-endpoint/api/v1`  
-**Publish Token**:   Token that will be used to push the metrics. Make sure your token has the following permissions:  
+   Publish Token -   Token that will be used to push the metrics. Make sure your token has the following permissions  
                      1. Write config (Configuration API v1): To create a dashboard with the captured metrics.  
                      2. Read config (Configuration API v1) : Permission to access to verify if the dashboard is already created.  
                      3. Ingest Metrics (API v2): Permissions to push the host units, DEM units into Dynatrace.  
                      4. Read Metrics (API v2): Permissions to read the metrics.  
                      5. Ingest Logs (API v2): An Optional field to allow pushing the problem data retrieved as logs.  
-**Capture consumption data per management zone**:        Set the flag to **Yes** in order to pull host units/DEM consumption metrics and slice it as per management zones.  
-**Capture host units consumption data per host groups**: Set the flag to **Yes** in order to pull host units consumption metrics and slice it as per host groups.  
-**Capture and report problem data**:                     Set the configuration to **Yes** to pull problem data like MTTR, problem details, etc.  
-**Capture and report adoption data**:                    Set the configuration to **Yes** to pull adoption data.  
+Capture consumption data per management zone -        Set the flag to **Yes** in order to pull host units/DEM consumption metrics and slice it as per management zones.  
+Capture host units consumption data per host groups - Set the flag to **Yes** in order to pull host units consumption metrics and slice it as per host groups.  
+Capture and report problem data -                   Set the configuration to **Yes** to pull problem data like MTTR, problem details, etc.  
+Capture and report adoption data -                    Set the configuration to **Yes** to pull adoption data.  
 
 
 
