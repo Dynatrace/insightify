@@ -1,10 +1,14 @@
+import io, csv
 import math
+import time
 import json
 import logging
 import requests
 import tempfile
+import datetime
 from enum import Enum
-from iteration import *
+import iteration
+#from iteration import COLLECT_FF_DATA,COLLECT_PROBLEM_DATA,COLLECT_CONSUMPTION_DATA,PROBLEM_INCIDENT
 from constant import *
 from pprint import pprint
 from pathlib import Path
@@ -436,19 +440,28 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             self.password = self.config.get("token", "admin")
             self.state_interval = self.config.get("state_interval", 60)
 
-            self.get_mgmt_zone_data = self.config.get("get_mgmt_zone_data", "False")
-            self.get_hu_hostgroup_data = self.config.get("get_hu_hostgroup_data", "No")
-
-            print(self.config.get("get_hu_hostgroup_data"))
-            print("Hostgroup data")
-            print(self.get_hu_hostgroup_data)
-
-            self.get_problem_data = self.config.get("get_problem_data", "No")
-            self.get_ff_data = self.config.get("get_ff_data", "No")
-            self.get_problem_data_mgmt_zone = self.config.get("get_problem_data_mgmt_zone","No")
+            self.get_mgmt_zone_data = self.config.get("get_mgmt_zone_data", "True")
+            self.get_hu_hostgroup_data = self.config.get("get_hu_hostgroup_data", "False")
+            self.get_problem_data = self.config.get("get_problem_data", "Yes")
+            self.get_ff_data = self.config.get("get_ff_data", "Yes")
+            self.get_problem_data_mgmt_zone = self.config.get("get_problem_data_mgmt_zone","Yes")
             self.confurl = self.config.get("confurl","https://push.live.dynatrace.com/api/v2/")
             self.conf_password = self.config.get("conftoken", "Token")
-          
+            self.prb_management_zone_list = self.config.get("management_zone_name","all")
+            self.prb_report_date = self.config.get("get_generate_report","Last 30 days")
+            self.activegate_endpoint = self.config.get("ag_endpoint","")
+            self.converted_to_incident_duration = self.config.get("problem_to_incident_duration","30")
+       
+            #Convert mins to ms (as problems api v2 reports resolution time in ms)
+            self.converted_to_incident_duration = int(self.converted_to_incident_duration)*60000
+
+            #Flag to indicate if earlier record push value has been pulled
+            self.problem_time_retrieve_flag = 0
+
+            #Local copy of the variable to identify when to pull problem data
+            self.problem_time_interval = iteration.COLLECT_PROBLEM_DATA 
+
+            #Other variables
             self.consumption_data_iterations = 0
             self.pull_prb_data_iterations = 0
             self.ff_data_iterations = 0
@@ -508,7 +521,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
         query = str(config_url) + endpoint
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.password)}
-        populate_data = requests.get(query, headers = get_param)
+        populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -522,6 +535,34 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
       finally:
         logger.debug("In dtApiV2GetQuery")  
         return data
+
+    # *********************************************************************
+    #           Function to get metrics using API V2 endpoint
+    # *********************************************************************
+    def dtApiV2GetMetricDataPoint(self, endpoint):
+      try:
+        logger.debug("In dtApiV2GetMetricDataPoint")
+        data = {}
+
+        config_url = self.confurl
+        query = str(config_url) + endpoint
+        get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
+        populate_data = requests.get(query, headers = get_param, verify=False)
+        logger.info(query)
+
+        if populate_data.status_code >=200 and populate_data.status_code <= 400:
+          data = populate_data.json()
+
+        elif populate_data.status_code == 401:
+          msg = "Auth Error"
+
+      except Exception as e:
+        logger.debug("in dtApiV2GetMetricDataPoint", str(e))
+
+      finally:
+        logger.debug("Succesfully completion dtApiV2GetMetricDataPoint")
+        return data
+
 
     # *******************************************************************************    
     #            Function to push metrics using Ingest Metrics endpoint
@@ -538,8 +579,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         query = str(config_url) + endpoint
         post_param = {'Content-Type':'text/plain;charset=utf-8', 'Authorization':'Api-Token {}'.format(self.conf_password)}
         
-        populate_data = requests.post(query, headers = post_param, data = payload)
-        logger.info(self.conf_password)
+        populate_data = requests.post(query, headers = post_param, data = payload, verify=False)
         logger.info(query)
         logger.info(populate_data)
 
@@ -571,7 +611,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         query = str(config_url) + endpoint
         post_param = {'Content-Type':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
         
-        populate_data = requests.post(query, headers = post_param, data = json.dumps(payload))
+        populate_data = requests.post(query, headers = post_param, data = json.dumps(payload), verify=False)
         logger.info(query)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -599,7 +639,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         
         query = str(config_url) + endpoint
         post_param = {'Content-Type':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
-        populate_data = requests.post(query, headers=post_param, data=json.dumps(payload))
+        populate_data = requests.post(query, headers=post_param, data=json.dumps(payload), verify=False)
         logger.info(query)
         logger.info(populate_data)
 
@@ -613,6 +653,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.info("In dtApiV1PostQuery: " + str(e))  
 
       finally:
+        print(populate_data.status_code)  
         logger.debug("Succesfully completed dtApiV1PostQuery")  
 
     # *******************************************************************************    
@@ -683,16 +724,37 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 if (self.problem_dashboard_created == 0):
                   logger.info("Will create a dashboard " + dashboard_name)
                   self.dtApiV1PostQuery(DASHBOARDS, dashboard_json)
-                  self.problem_dashboard_created = 1
 
+                  #Create benefit value realisation dashboard 
+                  dashboard_file = Path(__file__).parent / "benefit_realisation_report.json"
+                  fp = open(dashboard_file,'r')
+                  dashboard_json = json.loads(fp.read())
+
+                  dashboard_name = dashboard_json["dashboardMetadata"]["name"]
+                  logger.info("Will also create " + dashboard_name)
+
+                  payload = json.dumps(dashboard_json).replace('$1',endpoint)
+                  dashboard_json = json.loads(payload)
+                  self.dtApiV1PostQuery(DASHBOARDS, dashboard_json)
+
+                  #Create problem trend analysis
+                  dashboard_file = Path(__file__).parent / "problem_trend_and_analysis.json"
+                  fp = open(dashboard_file,'r')
+                  dashboard_json = json.loads(fp.read())
+
+                  dashboard_name = dashboard_json["dashboardMetadata"]["name"]
+                  payload = json.dumps(dashboard_json).replace('$1',endpoint)
+                  dashboard_json = json.loads(payload)
+                  self.dtApiV1PostQuery(DASHBOARDS, dashboard_json)
+
+                  self.problem_dashboard_created = 1
 
             #Pull problem data and other feature flags
             detailed_data = RemoteInsightifyExtension.mgmt_zone_data()
             detailed_prb_data = RemoteInsightifyExtension.problem_data()
 
-            if self.consumption_data_iterations >= COLLECT_CONSUMPTION_DATA:
-                # Collect consumption data after 60 mins
-                self.consumption_data_iterations = 0
+            if self.consumption_data_iterations >= iteration.COLLECT_CONSUMPTION_DATA:
+                self.consumption_data_iterations = 0 
                 host_consumption, dem_consumption, ddu_consumption, detailed_data = self.pull_consumption_data(logger, self.host_consumption, self.dem_consumption, self.ddu_consumption, detailed_data)
                 # Push consumption data 
                 topology_device.absolute("databases.host_unit_consumption", host_consumption, {"dimension":"Total Host Units"} ) 
@@ -708,16 +770,63 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             else:
               self.consumption_data_iterations = self.consumption_data_iterations + 1
 
-            if (self.get_problem_data == "Yes") and self.pull_prb_data_iterations >= COLLECT_PROBLEM_DATA:
-                # Collect problem data after 1-day 
-                self.pull_prb_data_iterations = 0
-                detailed_prb_data = self.pull_prb_data(logger, entityID, topology_device, detailed_prb_data, self.problems_mgmt_zone)
+            #Verify if there are any records inserted for the problem data before 
+            if self.problem_time_retrieve_flag == 0: 
+              #Get the last inserted record timestamp
+              query = GET_DATA_INSERTED_DATA_POINT.replace("ID",entityID)
+              get_last_inserted_data_set = self.dtApiV2GetMetricDataPoint(query)
+              logger.debug(get_last_inserted_data_set)
+ 
+              if get_last_inserted_data_set:
+                #print("IN.IN..IN")
+                try: 
+                   #print("IN. will identify last inserted record")
+                   logger.debug("Will identify the last inserted record timestamp")
+                   if (len(get_last_inserted_data_set["result"][0]["data"]) > 0):
+                     data_point_value = get_last_inserted_data_set["result"][0]["data"][0]["values"]
+
+                     for i in range(len(data_point_value)):
+                       if data_point_value[i]:
+                         last_inserted_record_time = data_point_value[i]
+
+                     #Identify the next expected insertion time (using the last record timestamp)
+                     logger.debug("Last inserted record time: ", str(last_inserted_record_time))
+                     now = time.time()
+                     if self.prb_report_date == "Last 30 days":
+                         expected_next_data_insertion = last_inserted_record_time+(30*86400)
+                     elif self.prb_report_date == "Last 60 days":
+                         expected_next_data_insertion = last_inserted_record_time + (60*86400)
+                     elif self.prb_report_date == "Last 90 days":
+                         expected_next_data_insertion = last_inserted_record_time + (90*86400)
+                     else:
+                         expected_next_data_insertion = last_inserted_record_time + (365*86400)
+
+                     self.problem_time_interval = int((expected_next_data_insertion - now)/60)
+                     self.problem_time_retrieve_flag = 1
+
+                except KeyError:
+                  print("Got the KeyError")  
+                  pass
+
+                except Exception as e:
+                  logger.exception("Exception encountered while reading record insertion time: " + str(e))
+
+              else:
+                logger.debug("No records found and looks like first iteration")
+
+            logger.debug("iteration.COLLECT_PROBLEM_DATA ", str(iteration.COLLECT_PROBLEM_DATA))
+            logger.debug("self.problem_time_interval", str(self.problem_time_interval))
+
+            if (self.get_problem_data == "Yes") and self.pull_prb_data_iterations >= self.problem_time_interval:
+                # Collect problem data
+                self.pull_prb_data_iterations = 0 
+                detailed_prb_data = self.pull_prb_data(logger, entityID, topology_device, detailed_prb_data, self.problems_mgmt_zone, self.prb_management_zone_list, self.prb_report_date, self.activegate_endpoint,endpoint)
             else:
               self.pull_prb_data_iterations = self.pull_prb_data_iterations + 1 
 
-            if (self.get_ff_data == "Yes") and self.ff_data_iterations >= COLLECT_FF_DATA:
+            if (self.get_ff_data == "Yes") and self.ff_data_iterations >= iteration.COLLECT_FF_DATA:
                 # Collect feature flag data after a week 
-                self.ff_data_iterations = 0
+                self.ff_data_iterations = 0 
                 detailed_data = self.pull_ff_data(logger, topology_device, detailed_data)
             else:
               self.ff_data_iterations = self.ff_data_iterations + 1 
@@ -732,10 +841,38 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     #           Function to pull the generated problems data 
     # *******************************************************************************    
 
-    def pull_prb_data(self, logger, entityID, topology_device, detailed_prb_data, problems_mgmt_zone):
+    def pull_prb_data(self, logger, entityID, topology_device, detailed_prb_data, problems_mgmt_zone, prb_management_zone_list, prb_report_date, ag_endpoint, endpoint):
         try:
           logger.debug("In pull_prb_data")
-          data = self.dtApiV2GetQuery(PROBLEMS)
+
+          now = time.time()
+          if prb_report_date == "Last 30 days":
+              end_date = now - (30*86400) 
+
+          elif prb_report_date == "Last 60 days":
+              end_date = now - (60*86400) 
+
+          elif prb_report_date == "Last 90 days":
+              end_date = now - (90*86400) 
+
+          else:
+              end_date = now - (365*86400) 
+
+          start_time_ms = int(end_date) * 1000
+          end_time_ms = int(now) * 1000
+   
+          if prb_management_zone_list != "" and prb_management_zone_list != "all" and prb_management_zone_list != "All":
+            PRB_QUERY = SPECIFIC_PROBLEMS.replace("starttime", str(start_time_ms))
+            PRB_QUERY = PRB_QUERY.replace("endtime", str(end_time_ms))
+            PRB_QUERY = PRB_QUERY.replace("mgmt_zone_name",prb_management_zone_list)
+
+          else:    
+            PRB_QUERY = PROBLEMS.replace("starttime", str(start_time_ms))
+            PRB_QUERY = PRB_QUERY.replace("endtime", str(end_time_ms))
+
+          print(PRB_QUERY)
+          data = self.dtApiV2GetQuery(PRB_QUERY)
+
           data_to_be_added = 0
 
           if data is not None:
@@ -759,7 +896,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               except Exception as e:
                   logger.exception("Exception encountered in pull_prb_data" + str(e))
 
-              detail_prb_data, mean_resolution_time,problems_mgmt_zone = self.populate_problem_data(entityID, data["problems"], detailed_prb_data, problems_mgmt_zone)
+              detail_prb_data, mean_resolution_time,problems_mgmt_zone = self.populate_problem_data(entityID, data["problems"], detailed_prb_data, problems_mgmt_zone, ag_endpoint, endpoint)
 
               topology_device.absolute("databases.problem_analysis", detailed_prb_data.total_prb, {"dimension":"Total Problems"})
               topology_device.absolute("databases.problem_analysis", detailed_prb_data.availability, {"dimension":"Availability Problem"})
@@ -1001,18 +1138,111 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
           return ddu_mgmt_zone
 
     # ********************************************************************************************************
+    #        Function to initialize the csv file which will be dumped as logs 
+    # ********************************************************************************************************
+    def initialize_csv_header(self):
+        try:
+          logger.debug("In initialize_csv_header")  
+
+          csv_data = ""
+          csv_data="dt.entity.custom_device,Endpoint Name,status,management.zone,Problem ID,Problem Link,problem.title,impact.level,severity.level,RCA or no RCA, MTTR(in hours)\n"
+
+        except Exception as e:
+          logger.exception("Exception encountered in initialize_csv_header: ", str(e))  
+
+        finally:
+          logger.info("Succesfully executed initialize_csv_header")  
+          return csv_data 
+
+    # ********************************************************************************************************
+    #        Function to slice and dice problem trend and push metrics 
+    # ********************************************************************************************************
+    def slice_and_dice_problem_trend(self, logger, csv_data):
+       try:
+           logger.debug("In slice_and_dice_problem_trend")
+           data = []
+           f = io.StringIO(csv_data)
+           reader = csv.DictReader(f)
+
+           for row in reader:
+             data.append(row)
+           print(data)
+           # Extract the timestamp column as a list of datetime objects
+           timestamps = [datetime.datetime.fromtimestamp(int(row['starttime'])) for row in data]
+           
+           # Group the data by month,year, problem title and management zone, keeping track of the number of occurrences and the sum of downtime 
+           result = {}
+           for row, timestamp in zip(data, timestamps):
+               key = (timestamp.year, timestamp.month, row["problem.title"], row["management.zone"],row["dt.entity.custom_device"])
+               if key not in result:
+                   result[key] = {"count": 0, "downtime": []}
+               result[key]["count"] += 1
+               result[key]["downtime"].append(float(row["mttr"]))
+           
+           # Format the result as a list of dictionaries, with keys being fieldnames
+           result_data = []
+           for key, value in result.items():
+               year, month, column_value,zone,entityId = key
+               count = value["count"]
+               total_downtime = sum(value["downtime"])
+               result_data.append({
+                   "entityId":entityId,
+                   "year": year,
+                   "month": month,
+                   "zone":zone,
+                   "column_value": column_value,
+                   "count": count,
+                   "downtime": total_downtime
+               })
+           print(result_data)
+
+           metric=""
+           metric_downtime=""
+
+           for item in result_data:
+               metric += "incidents.seen,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['count']) + "\n"
+               metric_downtime += "downtime,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",downtime=" + str(item['downtime']) + ",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['downtime']) + "\n"
+
+           print(metric)
+           print(metric_downtime)
+           logger.debug(metric)
+           self.dtApiIngestMetrics(INGEST_METRICS,metric)
+
+           logger.debug(metric_downtime)
+           self.dtApiIngestMetrics(INGEST_METRICS,metric_downtime)
+
+       except Exception as e:
+          logger.exception("Exception encountered slice_and_dice_problem_trend" + str(e))
+
+       finally:
+          logger.info("Successful execution: slice_and_dice_problem_trend")
+
+    # ********************************************************************************************************
     #        Function to populate problem metrics
     # ********************************************************************************************************
-    def populate_problem_data(self, entityID, data, detailed_prb_data, problems_mgmt_zone):
+    def populate_problem_data(self, entityID, data, detailed_prb_data, problems_mgmt_zone, ag_endpoint, endpoint):
         try:
           logger.debug("In populate_problem_data")  
+          print("In populte_problem_data")
 
           mean_rsp_time=[]
           median_rsp_time = 0
           total_prb_resolved = 0
           total_number_of_prb = 0 
           detailed_prb_data.total_prb = len(data)
+          csv_data = self.initialize_csv_header()
+          csv_data_list = []
+          #Data that we will dump to log file so it can be retrieved (where logV2 is disabled)
+          logger_csv_data = ""
+          logger_csv_data="dt.entity.custom_device,Endpoint Name,status,management.zone,Problem ID,Problem Link,starttime,endtime,problem.title,impact.level,severity.level,RCA or no RCA,mttr\n"
 
+
+          #Value across the endpoint (and not limited to management zone)
+          total_incident_reported = 0
+          incidents_with_rca = 0
+          incidents_wo_rca = 0
+          total_mttr_rca = []
+          total_mttr_wo_rca = []
           for i in range(len(data)):
             start_time = data[i]["startTime"]
             end_time = data[i]["endTime"]
@@ -1020,8 +1250,9 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             if end_time != -1:
               total_prb_resolved = total_prb_resolved + 1
               resolution_time = end_time - start_time
-
-              if resolution_time >= PROBLEM_INCIDENT:  
+              
+              if int(resolution_time) >= int(self.converted_to_incident_duration): 
+                total_incident_reported = total_incident_reported + 1
                 #Management Zone
                 key = ""
 
@@ -1055,16 +1286,39 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                     obj.resource=0
                     obj.mttr_rca=0
                     obj.mgmt_zone=key
-                    obj.mttr_wo_rca=0
+                    obj.mttr_wo_rca=-1
                     obj.mttr_rca_list=[]
                     obj.mttr_wo_rca_list=[]
                     problems_mgmt_zone[key]=obj
                 
                 if (data[i]["rootCauseEntity"]):
+                   incidents_with_rca = incidents_with_rca + 1
+                   total_mttr_rca.append(resolution_time)
+
                    problems_mgmt_zone[key].rootCause = problems_mgmt_zone[key].rootCause + 1
                    problems_mgmt_zone[key].mttr_rca_list.append(resolution_time)
+
+                   #Check the length of csv_data since we have a limitation of allowing a string of only 5000 characters
+                   if (csv_data.count('\n') >= 400):
+                     print("The count ", csv_data.count('\n'))
+                     csv_data_list.append(csv_data)
+                     csv_data = self.initialize_csv_header()
+
+                   csv_data = csv_data + entityID + "," + endpoint + ",INFO,\"" + key + "\"," + data[i]["displayId"] + "," + self.url[:-7] + "#problems/problemdetails;gf=all;pid=" + data[i]["problemId"] + "," + data[i]["title"] + "," + data[i]["impactLevel"] + "," + data[i]["severityLevel"] + ",rca," + str(resolution_time/3600000) + "\n"
+                   logger_csv_data = logger_csv_data + entityID + "," + endpoint + ",INFO,\"" + key + "\"," + data[i]["displayId"] + "," + self.url[:-7] + "#problems/problemdetails;gf=all;pid=" + data[i]["problemId"] + "," + str(int(start_time/1000)) + "," + str(end_time/1000) + "," + data[i]["title"] + "," + data[i]["impactLevel"] + "," + data[i]["severityLevel"] + ",rca," + str(resolution_time/3600000) + "\n"
+
                 else:   
+                   total_mttr_wo_rca.append(resolution_time)
+                   incidents_wo_rca = incidents_wo_rca + 1 
                    problems_mgmt_zone[key].mttr_wo_rca_list.append(resolution_time)
+
+                   #Check the length of csv_data since we have a limitation of allowing a string of only 5000 characters
+                   if (csv_data.count('\n') >= 400):
+                     csv_data_list.append(csv_data)
+                     csv_data = self.initialize_csv_header()
+
+                   csv_data = csv_data + entityID + "," + endpoint + ",INFO,\"" +  key + "\"," + data[i]["displayId"] + "," + self.url[:-7] + "#problems/problemdetails;gf=all;pid=" + data[i]["problemId"] + "," + data[i]["title"] + "," + data[i]["impactLevel"] + "," + data[i]["severityLevel"] + ",no_rca,"+str(resolution_time/3600000)+"\n"
+                   logger_csv_data = logger_csv_data + entityID + "," + endpoint + ",INFO,\"" +  key + "\"," + data[i]["displayId"] + "," + self.url[:-7] + "#problems/problemdetails;gf=all;pid=" + data[i]["problemId"] + "," + str(int(start_time/1000)) + "," + str(end_time/1000) + "," + data[i]["title"] + "," + data[i]["impactLevel"] + "," + data[i]["severityLevel"] + ",no_rca,"+str(resolution_time/3600000)+"\n"
                 mean_rsp_time.append(resolution_time)
                 severity = data[i]["severityLevel"]
 
@@ -1110,13 +1364,13 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               try:
                 problems_mgmt_zone[key].mttr_rca = ((sum(problems_mgmt_zone[key].mttr_rca_list)/len(problems_mgmt_zone[key].mttr_rca_list)))/60000
               except ZeroDivisionError:
-                problems_mgmt_zone[key].mttr_rca = 0
+                problems_mgmt_zone[key].mttr_rca = -1
 
               #Find the median response time for each mgmt_zone and convert it to minutes (from microseconds)
               try:
                 problems_mgmt_zone[key].mttr_wo_rca = ((sum(problems_mgmt_zone[key].mttr_wo_rca_list)/len(problems_mgmt_zone[key].mttr_wo_rca_list)))/60000
               except ZeroDivisionError:
-                problems_mgmt_zone[key].mttr_wo_rca = 0
+                problems_mgmt_zone[key].mttr_wo_rca = -1 
 
               # Push management zone metric only if config is set to yes 
               if self.get_problem_data_mgmt_zone == "Yes":
@@ -1136,6 +1390,48 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 logger.debug(metric)
                 self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
+          if (self.get_problem_data_mgmt_zone == "Yes"):
+              import time
+              now = time.time()
+
+              #Insert epoch time at the time of last record being inserted
+              metric += "record_insertion_time" + ",dt.entity.custom_device=" + entityID + " " + str(now) + "\n"
+             
+              mttr_rca = 0
+              mttr_wo_rca = 0
+              #Total mttr for the problems with rca 
+              try:
+                mttr_rca = ((sum(total_mttr_rca)))/60000
+              except ZeroDivisionError:
+                mttr_rca = -1
+
+              #Total mttr for the problems with rca 
+              try:
+                mttr_wo_rca = ((sum(total_mttr_wo_rca)))/60000
+              except ZeroDivisionError:
+                mttr_wo_rca = -1
+
+              #Insert the total incidents reported 
+              metric += "total_incident_reported" + ",dt.entity.custom_device=" + entityID + " " + str(total_incident_reported) + "\n"
+              metric += "total_incidents_with_rca" + ",dt.entity.custom_device=" + entityID + " " + str(incidents_with_rca) + "\n"
+              metric += "total_incidents_wo_rca" + ",dt.entity.custom_device=" + entityID + " " + str(incidents_wo_rca) + "\n"
+              metric += "total_mttr_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_rca) + "\n"
+              metric += "total_mttr_wo_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_wo_rca) + "\n"
+
+              logger.debug(metric)
+              self.dtApiIngestMetrics(INGEST_METRICS,metric)
+
+              #Once data is pushed, set next collection interval accordingly
+              if self.prb_report_date == "Last 30 days":
+                self.problem_time_interval = (30*1440) - 1
+              elif self.prb_report_date == "Last 60 days":
+                self.problem_time_interval = (60*1440) - 1
+              elif self.prb_report_date == "Last 90 days":
+                self.problem_time_interval  = (90*1440) - 1
+              else:
+                self.problem_time_interval  = (365*1440) - 1
+              
+              print(self.problem_time_interval)
           #Find the median response time and convert it to minutes (from microseconds)
           try:
             median_rsp_time = ((sum(mean_rsp_time)/len(mean_rsp_time)))/60000
@@ -1147,6 +1443,23 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
         finally:
           logger.info("Successful execution: populate_problem_data")
+          logger.info("Pushing the problem data in logs")
+          logger.info(logger_csv_data)
+
+          self.slice_and_dice_problem_trend(logger,logger_csv_data)
+
+          # Get the endpoint from ag_enpoint
+          if ag_endpoint != "":
+            #Push the latest csv_data   
+            csv_data_list.append(csv_data)  
+
+            for csv_data in csv_data_list:
+              reader = csv.DictReader(io.StringIO(csv_data))
+              json_data = json.dumps(list(reader))
+
+              query = ag_endpoint + "/logs/ingest"
+              self.dtApiV2PushLogs(query,json_data)
+
           return detailed_prb_data, median_rsp_time, problems_mgmt_zone
 
     # ********************************************************************************************************
@@ -1166,6 +1479,31 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         return state.name
 
     # *******************************************************************************    
+    #           Function to post data using API v2 endpoint
+    # *******************************************************************************    
+              
+    def dtApiV2PushLogs(self, query, payload):
+      try:    
+        logger.info("In dtApiV2PushLogs")
+                
+        data = {}
+        post_param = {'Accept':'application/json','Content-Type':'application/json; charset=utf-8', 'Authorization':'Api-Token {}'.format(self.conf_password)}
+        
+        populate_data = requests.post(query, headers = post_param, data = payload, verify=False)
+        logger.info(query)
+                
+        if populate_data.status_code == 401:
+          msg = "Auth Error"
+          logger.exception("Auth Error dtApiV2PushLogs: ")
+              
+      except Exception as e:
+        logger.exception("Exception in dtApiV2PushLogs" + str(e))
+                
+      finally:  
+        logger.info(populate_data)
+        logger.info("Succesfully completed dtApiV2PushLogs")
+
+    # *******************************************************************************    
     #           Function to get data using API v1 endpoint
     # *******************************************************************************    
     def dtApiQuery(self, endpoint):
@@ -1175,7 +1513,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     
         query = str(self.url) + endpoint 
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.password)}
-        populate_data = requests.get(query, headers = get_param)
+        populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -1205,7 +1543,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
         query = str(url) + endpoint
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
-        populate_data = requests.get(query, headers = get_param)
+        populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -1234,7 +1572,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
         query = str(url) + endpoint
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.password)}
-        populate_data = requests.get(query, headers = get_param)
+        populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -1262,7 +1600,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         query = v2_url + "metrics/query?metricSelector=" + endpoint + DEM_RELATIVE_TIMESTAMP 
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.password)}
 
-        populate_data = requests.get(query, headers = get_param)
+        populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
         logger.info(str(populate_data.status_code))
 
