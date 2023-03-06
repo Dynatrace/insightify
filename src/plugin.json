@@ -1,0 +1,287 @@
+{
+  "name": "custom.remote.python.insightify",
+  "version":"1.0.3",
+  "productiveMinVersion": "3.000",
+  "requiredAgentVersion": "1.000",
+  "type": "python",
+  "entity": "CUSTOM_DEVICE",
+  "metricGroup": "tech.insightify",
+  "technologies": ["Insightify"],
+  "source": {
+    "package": "insightify",
+    "className": "RemoteInsightifyExtension",
+    "install_requires": [
+      "requests>=2.6.0"
+    ],
+    "activation": "Remote"
+  },
+  "ui" : {
+    "keymetrics" : [
+      { 
+        "key": "databases.host_unit_consumption",
+        "displayname": "Host Unit Consumption"
+      },
+      { 
+        "key": "databases.ddu_unit_consumption",
+        "displayname": "DDU Units Consumption"
+      },
+      { 
+        "key": "databases.dem_unit_consumption",
+        "displayname": "DEM Units"
+      }
+    ],
+    "charts" : [
+      {
+        "group": "License Consumption Details",
+        "title": "License Consumption",
+        "series": [
+	    {
+                "key": "databases.host_unit_consumption",
+                "displayname": "Host Unit Consumption",
+                "seriestype": "Bar",
+                "color": "#74cff7",
+                "metricexplanation": "Host Unit consumption"
+            },
+	    {
+                "key": "databases.dem_unit_consumption",
+                "displayname": "DEM Unit Consumption",
+                "seriestype": "Bar",
+                "color": "#74cff7",
+                "metricexplanation": "DEM Unit Consumption"
+            },
+	    {
+                "key": "databases.ddu_unit_consumption",
+                "displayname": "DDU Unit Consumption",
+                "seriestype": "Bar",
+                "color": "#74cff7",
+                "metricexplanation": "DDU Unit Consumption"
+	    }
+        ]
+      },
+      {
+        "group": "Problem",
+        "title": "Problem Analysis",
+        "series": [
+            {
+                "key": "databases.problem_analysis",
+                "displayname": "Units",
+                "seriestype": "line",
+                "color": "#74cff7",
+                "metricexplanation": "Details of the problem encountered in the environment"
+            }
+        ]
+      },
+      {
+        "group": "License Consumption per Management Zone",
+        "title": "Management Zone Consumption",
+        "series": [ 
+            {
+                "key": "databases.license_consumption",
+                "displayname": "Units",
+                "seriestype": "line",
+                "color": "#74cff7",
+                "metricexplanation": "Consumption as per management zone"
+            }
+        ]
+      },
+      {
+        "group": "Feature Flags",
+        "title": "Feature flags",
+        "series": [
+         {
+                "key": "databases.request_attributes",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No of request attributes configured in your environment"
+         },
+         {
+                "key": "databases.process_groups",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No of process groups configured in your environment"
+         },
+         {
+                "key": "databases.tags",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No. of tags configured in your environment"
+         },
+         {
+                "key": "databases.mgmt_zone",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No of management zone configured in your environment"
+         },
+         {
+                "key": "databases.problem_notifications",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No of problem notifications configured in your environment"
+         },
+         {
+                "key": "databases.alerting_profile",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No of Alerting Profiles configured in your environment"
+         },
+         {
+                "key": "databases.session_replay",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No. of user session with session replay captured"
+         },
+         {
+                "key": "databases.conversion_goals",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No. of user session with conversion goals converted"
+         },
+         {
+                "key": "databases.key_requests",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No. of naming Key Requests in your environment"
+         },
+         {
+                "key": "databases.session_properties",
+                "displayname": "Units",
+                "seriestype": "bar",
+                "color": "#74cff7",
+                "metricexplanation": "No. of Session Properties in your environment"
+         }
+       ]
+      }
+    ]
+  },
+  "metrics": [
+    { "timeseries": { "key": "databases.host_unit_consumption", "unit":"Count", "displayname": "Host License Usage", "dimensions":["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.dem_unit_consumption", "unit":"Count", "displayname": "DEM License Usage", "dimensions":["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.ddu_unit_consumption", "unit":"Count", "displayname": "DDU License Usage","dimensions":["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.problem_analysis", "unit":"Count", "displayname": "Problem Analysis", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.license_consumption", "unit":"Count", "displayname": "Management Zone", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.request_attributes", "unit":"Count", "displayname": "Feature Flag - Request Attribute", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.alerting_profile", "unit":"Count", "displayname": "Feature Flag - Alerting Profile", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.session_replay", "unit":"Count", "displayname": "Feature Flag - Session Replay", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.conversion_goals", "unit":"Count", "displayname": "Feature Flag - Conversion Goals", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.process_groups", "unit":"Count", "displayname": "Feature Flag - Process Groups", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.tags", "unit":"Count", "displayname": "Feature Flag - Tags", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.mgmt_zone", "unit":"Count", "displayname": "Feature Flag - Management Zone", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.problem_notifications", "unit":"Count", "displayname": "Feature Flag - Problem Notifications", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.key_requests", "unit":"Count", "displayname": "Feature Flag - Key Requests", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"},
+    { "timeseries": { "key": "databases.session_properties", "unit":"Count", "displayname": "Feature Flag - Session Properties", "aggregation": "MAX", "dimensions": ["dimension"]}, "entity": "CUSTOM_DEVICE"}],
+  "properties": [
+    {
+      "key": "url",
+      "type": "String"
+    },
+    {
+      "key": "token",
+      "type": "Password"
+    },
+    {
+      "key": "conftoken",
+      "type": "Password"
+    },
+    {
+      "key": "confurl",
+      "type": "String"
+    },
+    {
+      "key": "get_mgmt_zone_data",
+      "type": "Dropdown",
+      "defaultValue": "Yes",
+      "dropdownValues": [
+              "Yes",
+              "No"
+      ]
+    },
+    {
+      "key": "get_hu_hostgroup_data",
+      "type": "Dropdown",
+      "defaultValue": "No",
+      "dropdownValues": [
+              "Yes",
+              "No"
+      ] 
+    },
+    {
+      "key": "get_problem_data",
+      "type": "Dropdown",
+      "defaultValue": "Yes",
+      "dropdownValues": [
+	      "Yes",
+	      "No"
+      ]
+    },
+    {
+      "key": "get_ff_data",
+      "type": "Dropdown",
+      "defaultValue": "Yes",
+      "dropdownValues": [
+	      "Yes",
+	      "No"
+      ]
+    },
+    {           
+      "key": "get_problem_data_mgmt_zone",
+      "type": "Dropdown",
+      "defaultValue": "Yes",
+      "dropdownValues": [
+              "Yes",
+              "No"
+      ] 
+    },
+    {
+      "key": "problem_to_incident_duration",
+      "type":"String",
+      "defaultValue": "30"
+    },
+    {
+      "key": "get_generate_report",
+      "type": "Dropdown",
+      "defaultValue": "Last 30 days",
+      "dropdownValues": [
+	      "All Quarters",
+	      "Last 90 days",
+	      "Last 60 days",
+	      "Last 30 days"
+      ]
+    },
+    {
+      "key": "management_zone_name",
+      "type": "String"
+    },
+    {
+      "key": "ag_endpoint",
+      "type": "String"
+    }
+    
+  ],
+"configUI" :{
+    "displayName": "Insightify",
+        "properties" : [
+          { "key" : "url", "displayName": "Tenant URL", "displayOrder": 1, "displayHint": "http://abc.live.dynatrace.com/api/v1/" },
+          { "key" : "token", "displayName": "Tenant Token", "displayOrder": 2, "displayHint": "Token with access to read metrics, access problem, events", "defaultValue": "somepassword"},
+          { "key" : "confurl", "displayName": "Publish Tenant URL", "displayOrder": 3, "displayHint": "http://xyz.live.dynatrace.com/api/v2/" },
+	  { "key" : "conftoken", "displayName": "Tenant Config Token", "displayOrder": 4, "displayHint": "Token with access to create dashboard and ingest metrics for viewing the metrics", "defaultValue": "somepassword"},
+          { "key" : "get_mgmt_zone_data", "displayName": "Capture consumption data per management zone", "displayOrder": 5, "displayHint": "Select to capture host, dem units as per management zone", "defaultValue": false},
+          { "key" : "get_hu_hostgroup_data", "displayName": "Capture host units consumption data per host groups", "displayOrder": 6, "displayHint": "Select to capture the host as per management zone?", "defaultValue": false},
+          { "key" : "get_problem_data", "displayName": "Capture and report problem data", "displayOrder": 7, "displayHint": "Select to capture problem data", "defaultValue": true},
+          { "key" : "get_ff_data", "displayName": "Capture and report feature adoption data", "displayOrder": 8, "displayHint": "Select to capture Dynatrace feature adoption metrics", "defaultValue": true},
+          { "key" : "get_problem_data_mgmt_zone", "displayName": "Capture problem data per management zone", "displayOrder": 9, "displayHint": "Select to capture and report problem data per management zone", "defaultValue": false},
+          { "key" : "problem_to_incident_duration", "displayName": "Duration (in mins) when problem is treated as incident", "displayOrder": 10, "displayHint": "Time before problem is treated as incident. Default is 30 mins", "defaultValue": 30},
+          { "key" : "management_zone_name", "displayName": "Management Zone Name", "displayOrder": 11, "displayHint": "Enter the management zone name for which you will want to pull problem data for. Default is all","defaultValue":"" },
+          { "key" : "get_generate_report", "displayName": "Capture and Generate Problem Report Data", "displayOrder": 12, "displayHint": "Select timeperiod to generate problem data", "defaultValue": "Last 30 days"},
+          { "key" : "ag_endpoint", "displayName": "ActiveGate Endpoint (with logs module)", "displayOrder": 13, "displayHint": "https://ag-ip:9999/e/env-id/api/v2/" }
+        ]
+  }
+}
