@@ -108,7 +108,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             for host in hosts:
               mgtzone = ""
               hostGroup = ""
-              logger.debug(host)
+              #logger.info(host)
 
               #Populate Management Zone(s) for each host
               try:
@@ -194,7 +194,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
     def push_entity(self, ddu_mgmt_zone, availability_mgmt_zone, entity):
       try:
-         logger.debug("In push_entity " + entity)
+         logger.info("In push_entity " + entity)
          availability_zone = ""
          # The logic would be different for EBS_VOLUME & DYNAMO_DB_TABLE since these are associated to AWS EC2 instance or AWS AVAILABILITY 
          if 'EBS_VOLUME' in entity:
@@ -323,7 +323,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                     ddu_mgmt_zone, availability_mgmt_zone = self.push_entity(ddu_mgmt_zone, availability_mgmt_zone, entity)
 
           except KeyError:
-             logger.debug("Found no records in DDU consumption") 
+             logger.info("Found no records in DDU consumption") 
              pass 
          
       except Exception as e:
@@ -374,7 +374,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.info("Successful execution: populate_app_cache")
         
       except Exception as e:
-        traceback.print_exc()
         logger.exception("Exception while running populate_app_cache", str(e))
     
       finally:
@@ -425,7 +424,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.info("Successful execution: fetch_sync_application")
         
       except Exception as e:
-        traceback.print_exc()
         logger.exception("Exception while running populate_syn_app_cache", str(e), exc_info=True)
     
       finally:
@@ -482,10 +480,9 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             self.hostGroup_splitdata = {}
             self.app_mgmt_zone = {}
             self.problems_mgmt_zone = {}
-            print(tempfile.gettempdir())
 
             if self.get_mgmt_zone_data == "Yes" or self.get_hu_hostgroup_data == "Yes":
-                logger.debug("In initialize")
+                logger.info("In initialize")
 
                 #Populate the hosts as per management zone and host group
                 self.split_data, self.hostGroup_splitdata = self.populate_host_cache(self.split_data, self.hostGroup_splitdata)
@@ -513,7 +510,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *********************************************************************    
     def dtApiV2GetQuery(self, endpoint):
       try:
-        logger.debug("In dtApiV2GetQuery")  
+        logger.info("In dtApiV2GetQuery")  
         data = {}
 
         config_url = self.url
@@ -530,10 +527,10 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
           msg = "Auth Error"
 
       except Exception as e:
-        logger.debug("in dtApiV2GetQuery ", str(e))
+        logger.exception("in dtApiV2GetQuery ", str(e))
 
       finally:
-        logger.debug("In dtApiV2GetQuery")  
+        logger.info("In dtApiV2GetQuery")  
         return data
 
     # *********************************************************************
@@ -541,7 +538,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *********************************************************************
     def dtApiV2GetMetricDataPoint(self, endpoint):
       try:
-        logger.debug("In dtApiV2GetMetricDataPoint")
+        logger.info("In dtApiV2GetMetricDataPoint")
         data = {}
 
         config_url = self.confurl
@@ -557,10 +554,10 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
           msg = "Auth Error"
 
       except Exception as e:
-        logger.debug("in dtApiV2GetMetricDataPoint", str(e))
+        logger.info("in dtApiV2GetMetricDataPoint", str(e))
 
       finally:
-        logger.debug("Succesfully completion dtApiV2GetMetricDataPoint")
+        logger.info("Succesfully completion dtApiV2GetMetricDataPoint")
         return data
 
 
@@ -570,7 +567,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *******************************************************************************    
     def dtApiIngestMetrics(self, endpoint, payload):
       try:
-        logger.debug("In dtApiIngestMetrics ")
+        logger.info("In dtApiIngestMetrics ")
         data = {}
 
         config_url = self.confurl
@@ -593,7 +590,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.exception("Exception in dtApiIngestMetrics ", str(e))
 
       finally:
-        logger.debug("Succesfully completed dtApiIngestMetrics")  
+        logger.info("Succesfully completed dtApiIngestMetrics")  
         return data
 
     # *******************************************************************************    
@@ -602,7 +599,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
     def dtApiV2PostQuery(self, endpoint, payload):
       try:
-        logger.debug("In dtApiV2PostQuery")  
+        logger.info("In dtApiV2PostQuery")  
         data = {}
 
         config_url = self.confurl
@@ -623,7 +620,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.exception("Exception in dtApiV2PostQuery " + str(e))
 
       finally:
-        logger.debug("Succesfully completed dtApiV2PostQuery")  
+        logger.info("Succesfully completed dtApiV2PostQuery")  
         return data
 
     # *******************************************************************************    
@@ -631,7 +628,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *******************************************************************************    
     def dtApiV1PostQuery(self, endpoint, payload):
       try:
-        logger.debug("In dtApiV1PostQuery")  
+        logger.info("In dtApiV1PostQuery")  
         data = {}
 
         config_url = self.confurl
@@ -640,7 +637,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         query = str(config_url) + endpoint
         post_param = {'Content-Type':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
         populate_data = requests.post(query, headers=post_param, data=json.dumps(payload), verify=False)
-        logger.info(query)
         logger.info(populate_data)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
@@ -653,15 +649,14 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.info("In dtApiV1PostQuery: " + str(e))  
 
       finally:
-        print(populate_data.status_code)  
-        logger.debug("Succesfully completed dtApiV1PostQuery")  
+        logger.info("Succesfully completed dtApiV1PostQuery")  
 
     # *******************************************************************************    
     #           Function to post data using API v1 endpoint
     # *******************************************************************************    
     def query(self, **kwargs):
         try:  
-            logger.debug("In query function")
+            logger.info("In query function")
             group_name = self.get_group_name()
 
             endpoint=self.activation.endpoint_name.strip()
@@ -684,6 +679,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 dashboard_name = dashboard_json["dashboardMetadata"]["name"]
                 dashboards = self.dtConfApiv1(GET_EXISTING_DASHBOARD)
 
+                logger.info("Found dashboards: " + str(len(dashboards)))
                 #Check if the dashboard is already present
                 if len(dashboards) > 0:
                   dashboardList = dashboards["dashboards"]
@@ -710,11 +706,13 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 dashboard_name = dashboard_json["dashboardMetadata"]["name"]
                 dashboards = self.dtConfApiv1(GET_EXISTING_DASHBOARD)
             
+                logger.info("(problem_dashboard_check) Dashboard founds: " + str(len(dashboards))) 
                 #Check if the dashboard is already present
                 if len(dashboards) > 0:
                   dashboardList = dashboards["dashboards"]
                 
                   for dashboard in dashboardList:
+                      logger.info(dashboard["name"]) 
                       if dashboard["name"].__eq__(dashboard_name):
                         logger.info("Found a dashboard already by that configuration. Skipping.. " + dashboard["name"])
                         self.problem_dashboard_created = 1
@@ -775,47 +773,54 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               #Get the last inserted record timestamp
               query = GET_DATA_INSERTED_DATA_POINT.replace("ID",entityID)
               get_last_inserted_data_set = self.dtApiV2GetMetricDataPoint(query)
-              logger.debug(get_last_inserted_data_set)
+              logger.info(get_last_inserted_data_set)
  
               if get_last_inserted_data_set:
-                #print("IN.IN..IN")
-                try: 
-                   #print("IN. will identify last inserted record")
-                   logger.debug("Will identify the last inserted record timestamp")
-                   if (len(get_last_inserted_data_set["result"][0]["data"]) > 0):
-                     data_point_value = get_last_inserted_data_set["result"][0]["data"][0]["values"]
+                try:
+                   logger.info("Will identify the last inserted record timestamp")
+                  
+                   for result_obj in get_last_inserted_data_set['result']:
+                       logger.info(result_obj)
+                       for data_obj in result_obj['data']:
+                           logger.info(data_obj['dimensions'][0])
+                           if data_obj['dimensions'][0] == entityID:
+                             logger.info("Found the custom-device" +  data_obj['dimensions'][0])
 
-                     for i in range(len(data_point_value)):
-                       if data_point_value[i]:
-                         last_inserted_record_time = data_point_value[i]
+       
+                             for j in range(len(data_obj['values'])):
+                               if data_obj['values'][j]:
+                                 logger.info(data_obj['values'][j])
+                                 #logger.info(data_obj['timestamps'][j])
+                                 last_inserted_record_time = data_obj['values'][j]
+                                 logger.info("Last inserted record time: " + str(last_inserted_record_time))
+          
+                                 #Setup the next expected insertion time (using the last record timestamp)
+                                 now = time.time()
+                                 if self.prb_report_date == "Last 30 days":
+                                     expected_next_data_insertion = last_inserted_record_time+(30*86400)
+                                 elif self.prb_report_date == "Last 60 days":
+                                     expected_next_data_insertion = last_inserted_record_time + (60*86400)
+                                 elif self.prb_report_date == "Last 90 days":
+                                     expected_next_data_insertion = last_inserted_record_time + (90*86400)
+                                 else:
+                                     expected_next_data_insertion = last_inserted_record_time + (365*86400)
 
-                     #Identify the next expected insertion time (using the last record timestamp)
-                     logger.debug("Last inserted record time: ", str(last_inserted_record_time))
-                     now = time.time()
-                     if self.prb_report_date == "Last 30 days":
-                         expected_next_data_insertion = last_inserted_record_time+(30*86400)
-                     elif self.prb_report_date == "Last 60 days":
-                         expected_next_data_insertion = last_inserted_record_time + (60*86400)
-                     elif self.prb_report_date == "Last 90 days":
-                         expected_next_data_insertion = last_inserted_record_time + (90*86400)
-                     else:
-                         expected_next_data_insertion = last_inserted_record_time + (365*86400)
+                                 self.problem_time_interval = int((expected_next_data_insertion - now)/60)
+                                 self.problem_time_retrieve_flag = 1
 
-                     self.problem_time_interval = int((expected_next_data_insertion - now)/60)
-                     self.problem_time_retrieve_flag = 1
 
                 except KeyError:
-                  print("Got the KeyError")  
                   pass
 
                 except Exception as e:
                   logger.exception("Exception encountered while reading record insertion time: " + str(e))
 
               else:
-                logger.debug("No records found and looks like first iteration")
+                logger.info("No records found and looks like first iteration")
 
-            logger.debug("iteration.COLLECT_PROBLEM_DATA ", str(iteration.COLLECT_PROBLEM_DATA))
-            logger.debug("self.problem_time_interval", str(self.problem_time_interval))
+            logger.info("iteration.COLLECT_PROBLEM_DATA " +  str(iteration.COLLECT_PROBLEM_DATA))
+            logger.info("self.problem_time_interval " + str(self.problem_time_interval))
+            logger.info("self.pull_prb_data_iterations " + str(self.pull_prb_data_iterations))
 
             if (self.get_problem_data == "Yes") and self.pull_prb_data_iterations >= self.problem_time_interval:
                 # Collect problem data
@@ -843,7 +848,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
     def pull_prb_data(self, logger, entityID, topology_device, detailed_prb_data, problems_mgmt_zone, prb_management_zone_list, prb_report_date, ag_endpoint, endpoint):
         try:
-          logger.debug("In pull_prb_data")
+          logger.info("In pull_prb_data")
 
           now = time.time()
           if prb_report_date == "Last 30 days":
@@ -870,7 +875,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
             PRB_QUERY = PROBLEMS.replace("starttime", str(start_time_ms))
             PRB_QUERY = PRB_QUERY.replace("endtime", str(end_time_ms))
 
-          print(PRB_QUERY)
           data = self.dtApiV2GetQuery(PRB_QUERY)
 
           data_to_be_added = 0
@@ -922,7 +926,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *******************************************************************************    
     def push_ff_data(self, logger, topology_device, detailed_data):
        try:
-           logger.debug("In push_ff_data")
+           logger.info("In push_ff_data")
 
            topology_device.absolute("databases.alerting_profile", detailed_data.alerting_profile,{"dimension":"Alerting Profiles"})
            topology_device.absolute("databases.session_properties", detailed_data.session_properties,{"dimension":"Session Properties"})
@@ -957,14 +961,12 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         #Now fetch all the synthetic applications
         self.app_mgmt_zone = self.populate_syn_app_cache(self.app_mgmt_zone)
 
-        print(applications)
         if (len(applications)) > 0:
           apps = applications['result'][0]['data']
           for billing in apps:
             dimensions = billing['dimensions']
             if syn == 0:
               if dimensions[1] == "Billed":
-                print(dimensions[0], " ",billing['values'][0])
                 consumption_details[dimensions[0]] = billing['values'][0]
             elif syn >= 0:
                 consumption_details[dimensions[0]] = billing['values'][0]
@@ -976,7 +978,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 if key == app_mgmt_zone[mgmt_zone_name][i].entityId:
                   app_mgmt_zone[mgmt_zone_name][i].consumption = app_mgmt_zone[mgmt_zone_name][i].consumption + consumption_details[key]
                   app_mgmt_zone[mgmt_zone_name][i].dem = float(app_mgmt_zone[mgmt_zone_name][i].consumption * multiplying_factor)
-                  print(app_mgmt_zone[mgmt_zone_name][i].name, " ",app_mgmt_zone[mgmt_zone_name][i].type, " " ,app_mgmt_zone[mgmt_zone_name][i].consumption, " ", app_mgmt_zone[mgmt_zone_name][i].dem) 
                   break
 
       except Exception as e:
@@ -1016,7 +1017,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                       ddu_consumption_mgmt_zone[mz] = ddu_consumption_mgmt_zone[mz] + item['values'][0]
 
           except KeyError:
-             logger.debug("Found no records in DDU consumption") 
+             logger.info("Found no records in DDU consumption") 
              pass 
          
       except Exception as e:
@@ -1039,11 +1040,11 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
           hosts = self.dtApiQuery(INFRA_API)
 
           for host in hosts:
-            logger.debug(host)
+            logger.info(host)
             try:
               key = split_data[host['entityId']]
             except KeyError:
-              logger.debug("New host added : calling populate_host_cache", host['entityId'])
+              logger.info("New host added : calling populate_host_cache", host['entityId'])
               split_data, split_host_group_data = self.populate_host_cache(split_data, split_host_group_data, host)
 
           """
@@ -1077,8 +1078,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
             for key in self.app_mgmt_zone.keys():
                 metric += "consumption.demUnits,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(self.app_mgmt_zone[key][0].consumption) + "\n" 
-            print(metric)
-            logger.debug(metric)
+            logger.info(metric)
             self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
             tmp_dic = {}
@@ -1142,7 +1142,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # ********************************************************************************************************
     def initialize_csv_header(self):
         try:
-          logger.debug("In initialize_csv_header")  
+          logger.info("In initialize_csv_header")  
 
           csv_data = ""
           csv_data="dt.entity.custom_device,Endpoint Name,status,management.zone,Problem ID,Problem Link,problem.title,impact.level,severity.level,RCA or no RCA, MTTR(in hours)\n"
@@ -1159,14 +1159,13 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # ********************************************************************************************************
     def slice_and_dice_problem_trend(self, logger, csv_data):
        try:
-           logger.debug("In slice_and_dice_problem_trend")
+           logger.info("In slice_and_dice_problem_trend")
            data = []
            f = io.StringIO(csv_data)
            reader = csv.DictReader(f)
 
            for row in reader:
              data.append(row)
-           print(data)
            # Extract the timestamp column as a list of datetime objects
            timestamps = [datetime.datetime.fromtimestamp(int(row['starttime'])) for row in data]
            
@@ -1194,7 +1193,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                    "count": count,
                    "downtime": total_downtime
                })
-           print(result_data)
 
            metric=""
            metric_downtime=""
@@ -1203,12 +1201,10 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                metric += "incidents.seen,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['count']) + "\n"
                metric_downtime += "downtime,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",downtime=" + str(item['downtime']) + ",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['downtime']) + "\n"
 
-           print(metric)
-           print(metric_downtime)
-           logger.debug(metric)
+           logger.info(metric)
            self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
-           logger.debug(metric_downtime)
+           logger.info(metric_downtime)
            self.dtApiIngestMetrics(INGEST_METRICS,metric_downtime)
 
        except Exception as e:
@@ -1222,8 +1218,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # ********************************************************************************************************
     def populate_problem_data(self, entityID, data, detailed_prb_data, problems_mgmt_zone, ag_endpoint, endpoint):
         try:
-          logger.debug("In populate_problem_data")  
-          print("In populte_problem_data")
+          logger.info("In populate_problem_data")  
 
           mean_rsp_time=[]
           median_rsp_time = 0
@@ -1300,7 +1295,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
                    #Check the length of csv_data since we have a limitation of allowing a string of only 5000 characters
                    if (csv_data.count('\n') >= 400):
-                     print("The count ", csv_data.count('\n'))
                      csv_data_list.append(csv_data)
                      csv_data = self.initialize_csv_header()
 
@@ -1387,7 +1381,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 metric += "mttr_with_rca,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(problems_mgmt_zone[key].mttr_rca) + "\n"
                 metric += "mttr_wo_rca,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(problems_mgmt_zone[key].mttr_wo_rca) + "\n"
 
-                logger.debug(metric)
+                logger.info(metric)
                 self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
           if (self.get_problem_data_mgmt_zone == "Yes"):
@@ -1418,7 +1412,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               metric += "total_mttr_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_rca) + "\n"
               metric += "total_mttr_wo_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_wo_rca) + "\n"
 
-              logger.debug(metric)
+              logger.info(metric)
               self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
               #Once data is pushed, set next collection interval accordingly
@@ -1431,7 +1425,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               else:
                 self.problem_time_interval  = (365*1440) - 1
               
-              print(self.problem_time_interval)
           #Find the median response time and convert it to minutes (from microseconds)
           try:
             median_rsp_time = ((sum(mean_rsp_time)/len(mean_rsp_time)))/60000
@@ -1534,7 +1527,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *******************************************************************************
     def dtConfApiv1(self, endpoint):
       try:
-        logger.debug("In dtConfApiv1")
+        logger.info("In dtConfApiv1")
         data = {}
 
         url = self.confurl
@@ -1545,6 +1538,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         get_param = {'Accept':'application/json', 'Authorization':'Api-Token {}'.format(self.conf_password)}
         populate_data = requests.get(query, headers = get_param, verify=False)
         logger.info(query)
+        logger.info(populate_data.status_code)
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
           data = populate_data.json()
@@ -1556,7 +1550,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.exception("Exception encountered in dtConfApiv1 ", str(e))
 
       finally:
-        logger.debug("Execution completed dtConfApiv1 ")
+        logger.info("Execution completed dtConfApiv1 ")
         return data
 
     # *******************************************************************************    
@@ -1564,7 +1558,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
     # *******************************************************************************    
     def dtConfApi(self, endpoint):
       try:
-        logger.debug("In dtConfApi")  
+        logger.info("In dtConfApi")  
         data = {}
 
         url = self.url
@@ -1584,7 +1578,7 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         logger.exception("Exception encountered in dtConfApi ", str(e))  
 
       finally:
-        logger.debug("Execution completed dtConfApi ")  
+        logger.info("Execution completed dtConfApi ")  
         return data
 
     # *******************************************************************************    
@@ -1611,10 +1605,10 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
           msg = "Auth Error"
 
       except Exception as e:
-        logger.debug("Encountered exception:", str(e))
+        logger.info("Encountered exception:", str(e))
 
       finally:
-        logger.debug("Execution completed dtApiV2Query")  
+        logger.info("Execution completed dtApiV2Query")  
         return data
 
     # **********************************************************************************    
