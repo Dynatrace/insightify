@@ -1,8 +1,0 @@
-{
-  "trialurl":"https://my-tenant.live.dynatrace.com/api/v1/",
-  "trialtoken":"my-token",
-  "conftoken":"conf-token",
-  "url":"https://pull-data.live.dynatrace.com/api/v1/",
-  "token":"get-parameters",
-  "confurl":"https://push-endpoint/e/e67ab00e-a666-44e9-9da8-23aebe7c4816/api/v2/"
-}
