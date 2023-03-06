@@ -1,0 +1,1237 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      6
+    ],
+    "clusterVersion": "1.256.138.20221229-145939"
+  },
+  "dashboardMetadata": {
+    "name": "Insightify: Benefits Realisation Report: $1",
+    "shared": true,
+    "owner": "dynatraceone@dynatrace.com",
+    "preset": true,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgd2lkdGg9IjUxMiIgZmlsbD0iIzAwOGNkYiIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTM5NiAyODYuOGMtMTAuOSAwLTE3LjctNS42LTE4LjEtNS45LTEuMS0uOS0xLjMtMi42LS4zLTMuNy45LTEuMSAyLjYtMS4zIDMuNy0uMy41LjQgMTIuMSA5LjcgMjkuMy45IDEuMy0uNyAyLjktLjEgMy41IDEuMS43IDEuMy4xIDIuOS0xLjEgMy41LTYuMyAzLjItMTIuMSA0LjQtMTcgNC40eiI+PC9wYXRoPjxwYXRoIGQ9Ik00NTEuNCAyNzMuMmgtMTYuOGMtMTEuNSAwLTE3LjIgMTkuMS0yMS43IDI0LjktNC4zIDUuNS0xMC4yIDguOC0xNi42IDguOC03LjEgMC0xMy40LTQtMTcuOC0xMC40bC01LjktOS45Yy00LjItOS40LTEzLjYtMTUuOS0yNC42LTE1LjloLTQybC0zNCA1OC44Yy0zLjItMTMuOS02LjQtMjguOC05LjMtNDMuNyAwIDAgMjAuNy0yMC42IDIwLjctMjUuMy0xMC44IDctMjcuNSA3LTI3LjUgN3MtMTQuOS0uNC0yNy41LTdjMCA1LjIgMjAuNyAyNS4zIDIwLjcgMjUuMy0yLjkgMTQuOS02LjEgMjkuOC05LjMgNDMuN2wtMzQtNTguOGgtNjUuN2MtMS44IDIuNi0xMS45IDE1LjctMjQgMTUuN3MtMjIuMS0xMy4yLTI0LTE1LjdINjAuMmMtOC45IDAtMTYuMiA3LjEtMTYuNCAxNS45VjMzOWMwIDkuMSA3LjQgMTYuNCAxNi40IDE2LjRoMTYuNHYtMzAuOGgzLjZ2MzAuOGg1Ni40djIzYzAgMTQuOSAxMi4xIDI3IDI3IDI3aDI3VjM1NWg2djUwLjVoMTE3LjlWMzU1aDZ2NTAuNWgyN2MxNC45IDAgMjctMTIuMSAyNy0yN1YzNTVsLjEuMmg3MS4zczcuOS0xNy44IDAtMzAuM2gzLjhjOC42IDEzLjUgMCAzMC4zIDAgMzAuM2gxLjRjOSAwIDE2LjYtNi43IDE2LjYtMTUuOXYtNDkuN2MuMy04LjgtNy4zLTE2LjQtMTYuMy0xNi40ek0yNTUuOSAyNTQuNmM0MC45IDAgNzQuMS0zMy4xIDc0LjEtNzQuMSAwLTQwLjktMzMuMi03NC4xLTc0LjEtNzQuMXMtNzQuMSAzMy4xLTc0LjEgNzQuMWMuMSA0MSAzMy4zIDc0LjEgNzQuMSA3NC4xek0zOTUuNiAxNzMuM2MtMjQuOSAwLTQ0LjkgMjAuMy00NC45IDQ1LjJWMjYzaDIwLjRjLTUuMS02LjktOC4yLTE2LTguMi0yNS45IDAtMjEuNiAxNC43LTM5LjEgMzIuOC0zOS4xLTMuMyAzMS4zIDMyLjggMTcuNSAzMi44IDM5LjEgMCAxMC0zLjEgMTkuMS04LjMgMjYgMTAuOSAwIDIwLjMuMSAyMC4zLjFzLjEtMzUgLjEtNDQuOGMwLTI0LjktMjAtNDUuMS00NS00NS4xek0xMTYuNCAyNjMuNGMyNC45IDAgNDUuMi0yMC4yIDQ1LjItNDUuMlMxNDEuNCAxNzMgMTE2LjQgMTczcy00NS4yIDIwLjItNDUuMiA0NS4yYy4yIDI1IDIwLjQgNDUuMiA0NS4yIDQ1LjJ6Ij48L3BhdGg+PC9zdmc+"
+    },
+    {
+      "name": "People Involved to Resolve",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 76,
+        "width": 380,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 76,
+        "width": 380,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "## **No RCA** - 8 ppl  \n  \n  \n## **RCA** - 1 ppl\n\n"
+    },
+    {
+      "name": "Staffing Costs",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 570,
+        "width": 684,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 570,
+        "width": 684,
+        "height": 76
+      },
+      "tileFilter": {},
+      "markdown": "##  **No RCA** - $50/hr\n##  \n## **RCA** - $29/hr\n"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 494,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgd2lkdGg9IjUxMiIgZmlsbD0iIzVlYWQzNSIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTQ0IDIyMi4xOTd2MTgyLjQ4NWgzNjMuMzQ0VjIyMi4xOTdINDR6bTExNC44NTcgOTEuNjQ4YzAtMzUuNTIgMjcuNzIxLTY0LjU1MyA2Mi43MDUtNjYuNjcydjEyLjY4NmMtMTUuMDc0IDIuMDc2LTI3LjQ3IDExLjgzLTI4LjI5NyAyNy44MDEtLjM2IDYuOTU5IDEuMTU5IDEzLjc2IDUuMzQ0IDE5LjQyNSA0LjY1NSA2LjMwMiAxMS43ODggOS45NzcgMTguNzU0IDEzLjE1MiA2LjM3MSAyLjkwNSAxNS4wMDUgNS40NzkgMTguOTQxIDExLjc1MyAzLjc4MSA2LjAyNi4zODMgMTQuMTI4LTUuNjg4IDE2Ljk5OC02LjU5MSAzLjExNS0xNS4xIDIuMTc3LTIxLjgwMy0uMDY0LTMuMTgtMS4wNjQtNi4yMTMtMi40NDctOS4xMjYtNC4xMDUtMi4zNjgtMS4zNDgtNS45NDQtNC40MDgtNy41OC0uNTgyLTEuMjggMi45OS0uODU3IDcuNTUzLS41NDQgMTAuNjg0LjM3OCAzLjc4IDEuOTU3IDUuNjE3IDUuMjQ3IDcuNDc3IDcuMzgzIDQuMTc3IDE2LjM5IDUuNTkgMjQuNzUyIDUuNTl2MTIuNDk1aDguNzY2Yy0yOC45ODUgMi4wNC01Ni42NC0xNS41NjUtNjcuMDU2LTQyLjcwM2E2Ni45MyA2Ni45MyAwIDAxLTQuNDE1LTIzLjkzNXptNzUuNDY3IDY2LjI0MnYtMTMuNzczYzEzLjA4Mi0zLjM2NiAyMy41NDMtMTIuNzY5IDI1LjMwOC0yNi42MzkuODc4LTYuOTAyLS4wMTItMTMuOTM2LTMuNjY4LTE5Ljk0My0zLjUwMS01Ljc1My05LjAwNS05LjUyOC0xNC44NTYtMTIuNjEtOC43MjQtNC41OTYtMzEuMzYyLTkuOTUxLTI1LjQwNS0yNC4yNzUgMi42OTUtNi40NzggMTAuNzU4LTcuMjg2IDE2LjgzLTYuNTY3IDIuOTkzLjM1NSA1Ljg4NiAxLjIyOCA4LjY4NSAyLjMyNiAyLjkxOCAxLjE0MyA1LjUyOSAzLjAxNiA4LjQyNCA0LjEzNSAzLjU5OCAxLjM5IDMuOTYyLTIuMjQ4IDQuMTI0LTQuOTgyLjE4LTMuMDM4LjU5NS03LjEzLS41MDctMTAuMDM4LTEuMTA3LTIuOTI0LTQuNy00LjE3OS03LjM4LTUuMTkzLTMuNzY3LTEuNDI2LTcuNTg1LTIuMTQzLTExLjU1NS0yLjY3VjI0Ny42MWMyNSAzLjIzMiA0Ni41ODMgMjAuOTU1IDU0LjY1OCA0NC44MjggOC4yMzcgMjQuMzUxIDEuNDI3IDUxLjk0My0xNy4xNCA2OS42ODktMTAuMjI3IDkuNzc1LTIzLjQ4NCAxNi4xNDItMzcuNTE4IDE3Ljk2eiI+PC9wYXRoPjxwYXRoIGQ9Ik0xMDQuNjUyIDEwNy4zMTh2MTAyLjgzN2gxMTUuODFjLTQuOTc2LTI5LjU5IDEwLjg4NS01OS41NzkgMzguMjE0LTcyLjAxNWE2Ni43MDYgNjYuNzA2IDAgMDEyMy41NDMtNS44NDZ2MTIuNjg4Yy04LjE2NSAxLjA5LTE2LjI3NyA0LjIyMi0yMS43MjUgMTAuNjM1LTUuMzQ3IDYuMjk0LTcuMTg2IDE0LjQzMS02LjQ4MyAyMi41NC42ODggNy45MyA0LjY4MyAxNC44OSAxMC45MTYgMTkuNzk1IDcuMDE3IDUuNTIzIDE1LjY3OSA4LjAyMyAyMy40NCAxMi4yMDNoMzAuNzI4Yy0zLjM0Ny05Ljg5LTEyLjAxMi0xNS41My0yMS4wNDctMTkuNzUtNy4yMDctMy4zNjctMjAuNTk2LTYuNy0yMi4zNTEtMTUuOTA5LTIuMjE3LTExLjYyNiAxMC42MDctMTQuMzkgMTkuMjkyLTEyLjgyNyA0LjY2LjgzOCA5LjExNyAyLjgzNCAxMy4yNDcgNS4wOTQgMS4zNzUuNzUxIDMuMzk2IDIuMjY3IDQuOTMgMS4wMTYgMS4zODMtMS4xMjkgMS4yMjYtNC4wNjUgMS4yOS01LjY0My4xOC00LjQxMy44NTQtOS44OTctMy40ODMtMTIuNDQ0LTQuODQxLTIuODQzLTEwLjUxMi00LjAwOS0xNS45OTctNC43MXYtMTIuMjQ4YzI3LjI4NyAzLjUyNSA1MC4yMTYgMjQuMjY3IDU2LjQzOCA1MS4wNzIgMi4wMDYgOC42NDQgMi4yMjggMTcuNjAzLjc0OCAyNi4zNWg2Ny4yMzF2NzkuNjQ3SDQ2OFYxMDcuMzE4SDEwNC42NTJ6Ij48L3BhdGg+PC9zdmc+"
+    },
+    {
+      "name": "Repurpose to Innovation",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 38,
+        "width": 418,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Cost Reduction Benefits",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 380,
+        "left": 532,
+        "width": 722,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Est. Cost W/O RCA ($)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 494,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*(8*50)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*(8*50)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Total Savings ($)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 1026,
+        "width": 228,
+        "height": 380
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(1-((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)/(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8)))*(((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8))+(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*((50*8)-29)))",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((1 - ((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)/(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8)))*(((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8))+(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*((50*8)-29)))):limit(100):names"
+      ]
+    },
+    {
+      "name": "Est. Cost W RCA ($)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 494,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#74cff7"
+              },
+              {
+                "value": -1,
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Current Savings ($)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 760,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*((50*8)-29))",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#7dc540"
+              },
+              {
+                "value": -1,
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*((50*8)-29))):limit(100):names"
+      ]
+    },
+    {
+      "name": "+ Potential Savings ($)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 608,
+        "left": 760,
+        "width": 266,
+        "height": 190
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(1-((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)/(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8)))*(((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8))",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#99dea8"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": -1,
+                "color": "#fd8232"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((1 - ((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*29)/(((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8)))*(((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)*50*8))):limit(100):names"
+      ]
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 418,
+        "height": 76
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE3OSIgd2lkdGg9IjEwOTYiPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IGhlaWdodD0iMTc5IiB3aWR0aD0iMTA5NiIgeT0iMTE1OSIgeD0iMTgwNSI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMSI+PHJlY3QgaGVpZ2h0PSIxMzQiIHdpZHRoPSIxMzQiIHk9IjExNzEiIHg9IjE4MDkiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTM0IiB3aWR0aD0iMTM0IiB5PSIxMTcxIiB4PSIxODA5Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAzIj48cmVjdCBoZWlnaHQ9IjEzNCIgd2lkdGg9IjEzNCIgeT0iMTE3MSIgeD0iMTgwOSI+PC9yZWN0PjwvY2xpcFBhdGg+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xODA1IC0xMTU5KSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAxOTc2LjE5IDEyNjMpIiB0ZXh0LWRlY29yYXRpb249Im5vbmUiIHdyaXRpbmctbW9kZT0ibHItdGIiIGRpcmVjdGlvbj0ibHRyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtc2l6ZT0iODMiIGZvbnQtc3RyZXRjaD0ibm9ybWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXZhcmlhbnQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIiBmb250LWZhbWlseT0iQmVybmluYSBTYW5zIE9mZmMgTGlnaHQsQmVybmluYSBTYW5zIE9mZmMgTGlnaHRfTVNGb250U2VydmljZSxzYW5zLXNlcmlmIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGw9IiNGRkZGRkYiPkluY2lkZW50IFN1bW1hcnkgICAgICAgICAgPC90ZXh0PjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMSkiPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMikiPjxnIGNsaXAtcGF0aD0idXJsKCNjbGlwMykiPjxwYXRoIHRyYW5zZm9ybT0ibWF0cml4KDEgMCAwIDEuMDA3NTIgMTgxMCAxMTcxKSIgZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiNDODAwMUUiIGQ9Ik0xMjUuNTE5IDExMC44MzMgNzEuMzQ5IDE2LjYyNUM2OS4yNzA5IDEyLjg4NDQgNjMuODY3NyAxMi44ODQ0IDYxLjc4OTYgMTYuNjI1TDcuNDgxMjUgMTEwLjgzM0M1LjQwMzEzIDExNC41NzQgOC4wMzU0MiAxMTkuMTQ2IDEyLjMzMDIgMTE5LjE0Nkw2Ni41IDExOS4xNDYgMTIwLjY3IDExOS4xNDZDMTI0Ljk2NSAxMTkuMTQ2IDEyNy41OTcgMTE0LjU3NCAxMjUuNTE5IDExMC44MzNaTTYyLjM0MzggMzguNzkxNyA3MC42NTYzIDM4Ljc5MTcgNzAuNjU2MyA4Ny4yODEzIDYyLjM0MzggODcuMjgxMyA2Mi4zNDM4IDM4Ljc5MTdaTTY2LjUgMTA2LjY3N0M2Mi42MjA4IDEwNi42NzcgNTkuNTcyOSAxMDMuNjI5IDU5LjU3MjkgOTkuNzUgNTkuNTcyOSA5NS44NzA4IDYyLjYyMDggOTIuODIyOSA2Ni41IDkyLjgyMjkgNzAuMzc5MiA5Mi44MjI5IDczLjQyNzEgOTUuODcwOCA3My40MjcxIDk5Ljc1IDczLjQyNzEgMTAzLjYyOSA3MC4zNzkyIDEwNi42NzcgNjYuNSAxMDYuNjc3WiI+PC9wYXRoPjwvZz48L2c+PC9nPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 0,
+        "width": 456,
+        "height": 76
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9IjE3OSIgd2lkdGg9IjEzMzkiPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IGhlaWdodD0iMTc5IiB3aWR0aD0iMTMzOSIgeT0iMTM3MCIgeD0iMTgwNSI+PC9yZWN0PjwvY2xpcFBhdGg+PGNsaXBQYXRoIGlkPSJjbGlwMSI+PHJlY3QgaGVpZ2h0PSIxNDEiIHdpZHRoPSIxNDEiIHk9IjEzNzYiIHg9IjE4MDYiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iMTQxIiB3aWR0aD0iMTQxIiB5PSIxMzc2IiB4PSIxODA2Ij48L3JlY3Q+PC9jbGlwUGF0aD48Y2xpcFBhdGggaWQ9ImNsaXAzIj48cmVjdCBoZWlnaHQ9IjE0MSIgd2lkdGg9IjE0MSIgeT0iMTM3NiIgeD0iMTgwNiI+PC9yZWN0PjwvY2xpcFBhdGg+PC9kZWZzPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xODA1IC0xMzcwKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwKSI+PHRleHQgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAxOTg4Ljk4IDE0NzEpIiB0ZXh0LWRlY29yYXRpb249Im5vbmUiIHdyaXRpbmctbW9kZT0ibHItdGIiIGRpcmVjdGlvbj0ibHRyIiB0ZXh0LWFuY2hvcj0ic3RhcnQiIGZvbnQtc2l6ZT0iODMiIGZvbnQtc3RyZXRjaD0ibm9ybWFsIiBmb250LXdlaWdodD0iNzAwIiBmb250LXZhcmlhbnQ9Im5vcm1hbCIgZm9udC1zdHlsZT0ibm9ybWFsIiBmb250LWZhbWlseT0iQmVybmluYSBTYW5zIE9mZmMgTGlnaHQsQmVybmluYSBTYW5zIE9mZmMgTGlnaHRfTVNGb250U2VydmljZSxzYW5zLXNlcmlmIiBmaWxsLW9wYWNpdHk9IjEiIGZpbGw9IiNGRkZGRkYiPktleSBCZW5lZml0cyBTdW1tYXJ5ICAgICAgICAgICAgIDwvdGV4dD48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDEpIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDIpIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDMpIj48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzE0OTVGRiIgZD0iTTE4MzUuMzggMTM5NS4wOSAxODI2LjU2IDEzOTUuMDkgMTgyNi41NiAxNDk3LjkxIDE5MjcuOTEgMTQ5Ny45MSAxOTI3LjkxIDE0ODkuMDkgMTgzNS4zOCAxNDg5LjA5IDE4MzUuMzggMTM5NS4wOVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzE0OTVGRiIgZD0iTTE5MjcuOTEgMTQ4MC4yOCAxOTA1Ljg4IDE0ODAuMjggMTkwNS44OCAxMzk1LjA5IDE5MjcuOTEgMTM5NS4wOVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzE0OTVGRiIgZD0iTTE4OTcuMDYgMTQ4MC4yOCAxODc1LjAzIDE0ODAuMjggMTg3NS4wMyAxNDI0LjQ3IDE4OTcuMDYgMTQyNC40N1oiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzE0OTVGRiIgZD0iTTE4NjYuMjIgMTQ4MC4yOCAxODQ0LjE5IDE0ODAuMjggMTg0NC4xOSAxNDUwLjkxIDE4NjYuMjIgMTQ1MC45MVoiPjwvcGF0aD48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzE0OTVGRiIgZD0iTTE4OTEuMTkgMTQxNS4yNyAxODkxLjE5IDEzOTUuMDkgMTg3MS4wMSAxMzk1LjA5IDE4NzkuMDMgMTQwMy4xMSAxODQzLjU5IDE0MzguNTUgMTg0Ny43MyAxNDQyLjcgMTg4My4xNyAxNDA3LjI3IDE4OTEuMTkgMTQxNS4yN1oiPjwvcGF0aD48L2c+PC9nPjwvZz48L2c+PC9zdmc+"
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 494,
+        "width": 76,
+        "height": 114
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9Ijk2IiB3aWR0aD0iOTciPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IGhlaWdodD0iOTYiIHdpZHRoPSI5NyIgeT0iMzYwIiB4PSIzODQiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDEiPjxyZWN0IGhlaWdodD0iOTYiIHdpZHRoPSI5NiIgeT0iMzYwIiB4PSIzODUiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDIiPjxyZWN0IGhlaWdodD0iOTYiIHdpZHRoPSI5NiIgeT0iMzYwIiB4PSIzODUiPjwvcmVjdD48L2NsaXBQYXRoPjxjbGlwUGF0aCBpZD0iY2xpcDMiPjxyZWN0IGhlaWdodD0iOTYiIHdpZHRoPSI5NiIgeT0iMzYwIiB4PSIzODUiPjwvcmVjdD48L2NsaXBQYXRoPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMzg0IC0zNjApIiBjbGlwLXBhdGg9InVybCgjY2xpcDApIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDEpIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDIpIj48ZyBjbGlwLXBhdGg9InVybCgjY2xpcDMpIj48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iI0M4MDAxRSIgZD0iTTQ3MC40IDQxOC43IDQ3MC40IDQxMS42QzQ3MC40IDQwNi44IDQ2Mi43IDQwMy42IDQ1My40IDQwMi4zTDQ1My40IDM5Ni42QzQ1My40IDM5NSA0NTIuNSAzOTIuOCA0NDguNCAzOTAuN0w0NDguNCAzODMuNkM0NDguNCAzNzcuMSA0MzQuNSAzNzMuNiA0MjEuNCAzNzMuNiA0MDguMyAzNzMuNiAzOTQuNCAzNzcuMSAzOTQuNCAzODMuNkwzOTQuNCAzOTEuNkMzOTQuNCAzOTQgMzk2LjMgMzk2IDM5OS40IDM5Ny42TDM5OS40IDQwNC42QzM5OS40IDQwNC42IDM5OS40IDQwNC42IDM5OS40IDQwNC43IDM5NS4zIDQwNi44IDM5NC40IDQwOS4xIDM5NC40IDQxMC42TDM5NC40IDQxOC42QzM5NC40IDQyNS4xIDQwOC4zIDQyOC42IDQyMS40IDQyOC42TDQyMS40IDQzMi42QzQyMS40IDQzOS4xIDQzNS4zIDQ0Mi42IDQ0OC40IDQ0Mi42IDQ2MS41IDQ0Mi42IDQ3NS40IDQzOS4xIDQ3NS40IDQzMi42TDQ3NS40IDQyNC42QzQ3NS40IDQyMy4xIDQ3NC41IDQyMC44IDQ3MC40IDQxOC43Wk00NzMuNCA0MjQuN0M0NzMuNCA0MjguNSA0NjMuMSA0MzIuNyA0NDguNCA0MzIuNyA0MzYuNyA0MzIuNyA0MjcuOCA0MzAgNDI0LjYgNDI3IDQyNC42IDQyNyA0MjQuNiA0MjcgNDI0LjYgNDI3IDQzMC43IDQyOC45IDQzNyA0MjkuOCA0NDMuMyA0MjkuNyA0NTUuNSA0MjkuNyA0NjguNSA0MjYuNiA0NzAuMSA0MjEgNDcyLjMgNDIyLjEgNDczLjQgNDIzLjQgNDczLjQgNDI0LjdaTTQ1Ni40IDQzNC4yIDQ1Ni40IDQ0MC4yQzQ1NS4xIDQ0MC4zIDQ1My44IDQ0MC41IDQ1Mi40IDQ0MC41TDQ1Mi40IDQzNC41QzQ1My44IDQzNC41IDQ1NS4xIDQzNC40IDQ1Ni40IDQzNC4yWk00NTguNCA0MzRDNDU5LjggNDMzLjggNDYxLjEgNDMzLjYgNDYyLjQgNDMzLjNMNDYyLjQgNDM5LjJDNDYxLjIgNDM5LjUgNDU5LjggNDM5LjcgNDU4LjQgNDM5LjlMNDU4LjQgNDM0Wk00NjQuNCA0MzIuOEM0NjUuOCA0MzIuNSA0NjcuMSA0MzIgNDY4LjQgNDMxLjVMNDY4LjQgNDM3LjNDNDY3LjEgNDM3LjkgNDY1LjggNDM4LjMgNDY0LjQgNDM4LjdMNDY0LjQgNDMyLjhaTTQzMi40IDQzOC43QzQzMSA0MzguMyA0MjkuNyA0MzcuOSA0MjguNCA0MzcuM0w0MjguNCA0MzEuNUM0MjkuNyA0MzIgNDMxIDQzMi40IDQzMi40IDQzMi44TDQzMi40IDQzOC43Wk00MzQuNCA0MzMuM0M0MzUuNyA0MzMuNiA0MzcgNDMzLjggNDM4LjQgNDM0TDQzOC40IDQ0MEM0MzcgNDM5LjggNDM1LjYgNDM5LjUgNDM0LjQgNDM5LjNMNDM0LjQgNDMzLjNaTTQ0MC40IDQzNC4yQzQ0MS43IDQzNC4zIDQ0My4xIDQzNC41IDQ0NC40IDQzNC41TDQ0NC40IDQ0MC41QzQ0MyA0NDAuNCA0NDEuNyA0NDAuMyA0NDAuNCA0NDAuMkw0NDAuNCA0MzQuMlpNNDE2LjQgNDExLjcgNDE2LjQgNDEyQzQxNSA0MTEuOCA0MTMuNiA0MTEuNSA0MTIuNCA0MTEuM0w0MTIuNCA0MDUuNEM0MTMuNyA0MDUuNyA0MTUgNDA1LjkgNDE2LjQgNDA2LjFMNDE2LjQgNDExLjdaTTQxOC40IDQxOS43IDQxOC40IDQxNS43QzQxOS4zIDQxNi41IDQyMC4zIDQxNy4yIDQyMS40IDQxNy43TDQyMS40IDQyMy40QzQxOS41IDQyMi4xIDQxOC40IDQyMC45IDQxOC40IDQxOS43Wk00NjguNCA0MTkuN0M0NjguNCA0MjAuOSA0NjcuMyA0MjIuMiA0NjUuNCA0MjMuM0w0NjUuNCA0MTcuNkM0NjYuNSA0MTcuMSA0NjcuNSA0MTYuNCA0NjguNCA0MTUuNkw0NjguNCA0MTkuN1pNNDYzLjQgNDI0LjNDNDYyLjEgNDI0LjkgNDYwLjggNDI1LjMgNDU5LjQgNDI1LjdMNDU5LjQgNDE5LjhDNDYwLjggNDE5LjUgNDYyLjEgNDE5IDQ2My40IDQxOC41TDQ2My40IDQyNC4zWk00NTcuNCA0MjYuMkM0NTYuMiA0MjYuNSA0NTQuOCA0MjYuNyA0NTMuNCA0MjYuOUw0NTMuNCA0MjAuOUM0NTQuOCA0MjAuNyA0NTYuMSA0MjAuNSA0NTcuNCA0MjAuMkw0NTcuNCA0MjYuMlpNNDUxLjQgNDI3LjJDNDUwLjEgNDI3LjMgNDQ4LjggNDI3LjUgNDQ3LjQgNDI3LjVMNDQ3LjQgNDIxLjVDNDQ4LjcgNDIxLjQgNDUwLjEgNDIxLjMgNDUxLjQgNDIxLjJMNDUxLjQgNDI3LjJaTTQ0NS40IDQyNy42QzQ0NC43IDQyNy42IDQ0NC4xIDQyNy42IDQ0My40IDQyNy42IDQ0Mi43IDQyNy42IDQ0Mi4xIDQyNy42IDQ0MS40IDQyNy42TDQ0MS40IDQyMS42QzQ0Mi4xIDQyMS42IDQ0Mi43IDQyMS42IDQ0My40IDQyMS42IDQ0NC4xIDQyMS42IDQ0NC43IDQyMS42IDQ0NS40IDQyMS42TDQ0NS40IDQyNy42Wk00MzkuNCA0MjcuNkM0MzggNDI3LjUgNDM2LjcgNDI3LjQgNDM1LjQgNDI3LjNMNDM1LjQgNDIxLjNDNDM2LjcgNDIxLjQgNDM4LjEgNDIxLjYgNDM5LjQgNDIxLjZMNDM5LjQgNDI3LjZaTTQzMy40IDQyN0M0MzIgNDI2LjggNDMwLjYgNDI2LjUgNDI5LjQgNDI2LjNMNDI5LjQgNDIwLjRDNDMwLjcgNDIwLjcgNDMyIDQyMC45IDQzMy40IDQyMS4xTDQzMy40IDQyN1pNNDI3LjQgNDI1LjdDNDI2IDQyNS4zIDQyNC43IDQyNC45IDQyMy40IDQyNC4zTDQyMy40IDQxOC41QzQyNC43IDQxOSA0MjYgNDE5LjQgNDI3LjQgNDE5LjhMNDI3LjQgNDI1LjdaTTQ2OC40IDQxMS43QzQ2OC40IDQxNS41IDQ1OC4xIDQxOS43IDQ0My40IDQxOS43IDQyOC43IDQxOS43IDQxOC40IDQxNS41IDQxOC40IDQxMS43IDQxOC40IDQwNy45IDQyOC43IDQwMy43IDQ0My40IDQwMy43IDQ1OC4xIDQwMy43IDQ2OC40IDQwNy45IDQ2OC40IDQxMS43Wk00MTguNCA0MDcuNyA0MTguNCA0MDYuMkM0MTkgNDA2LjMgNDE5LjYgNDA2LjMgNDIwLjIgNDA2LjQgNDE5LjYgNDA2LjggNDE5IDQwNy4yIDQxOC40IDQwNy43Wk00NDkuNyA0MDEuOUM0NTAuMyA0MDEuNSA0NTAuOSA0MDEuMSA0NTEuNSA0MDAuNkw0NTEuNSA0MDIuMUM0NTAuOCA0MDIgNDUwLjMgNDAyIDQ0OS43IDQwMS45Wk00NDguMiAzOTIuOUM0NTAuMyAzOTQuMSA0NTEuNCAzOTUuNCA0NTEuNCAzOTYuNiA0NTEuNCAzOTguMyA0NDkuMiA0MDAuMiA0NDUuNSA0MDEuNiA0NDQuOCA0MDEuNiA0NDQuMSA0MDEuNiA0NDMuNCA0MDEuNiA0MzYuNCA0MDEuNiA0MjkuMSA0MDIuNiA0MjMuOSA0MDQuNiA0MTMuNCA0MDQuMyA0MDUuNiA0MDEuOCA0MDIuNyAzOTkgNDAyLjcgMzk5IDQwMi43IDM5OSA0MDIuNyAzOTkgNDA4LjggNDAwLjkgNDE1LjEgNDAxLjggNDIxLjQgNDAxLjcgNDMzLjYgNDAxLjcgNDQ2LjYgMzk4LjYgNDQ4LjIgMzkyLjlaTTQxMC40IDQwNC44IDQxMC40IDQxMC43QzQwOSA0MTAuMyA0MDcuNyA0MDkuOSA0MDYuNCA0MDkuM0w0MDYuNCA0MDMuNUM0MDcuNyA0MDQgNDA5LjEgNDA0LjUgNDEwLjQgNDA0LjhaTTQwNC40IDQwMi42IDQwNC40IDQwOC4zQzQwMi41IDQwNy4xIDQwMS40IDQwNS45IDQwMS40IDQwNC43TDQwMS40IDQwMC43QzQwMi4zIDQwMS40IDQwMy4zIDQwMi4xIDQwNC40IDQwMi42Wk00MDEuNCAzOTYuMyA0MDEuNCAzOTAuNUM0MDIuNyAzOTEgNDA0IDM5MS40IDQwNS40IDM5MS44TDQwNS40IDM5Ny43QzQwNC4xIDM5Ny4zIDQwMi43IDM5Ni45IDQwMS40IDM5Ni4zWk00MDcuNCAzOTguMiA0MDcuNCAzOTIuM0M0MDguNyAzOTIuNiA0MTAgMzkyLjggNDExLjQgMzkzTDQxMS40IDM5OUM0MTAgMzk4LjggNDA4LjcgMzk4LjUgNDA3LjQgMzk4LjJaTTQxMy40IDM5OS4yIDQxMy40IDM5My4yQzQxNC43IDM5My4zIDQxNi4xIDM5My41IDQxNy40IDM5My41TDQxNy40IDM5OS41QzQxNiAzOTkuNSA0MTQuNyAzOTkuNCA0MTMuNCAzOTkuMlpNNDE5LjQgMzk5LjYgNDE5LjQgMzkzLjZDNDIwLjEgMzkzLjYgNDIwLjcgMzkzLjYgNDIxLjQgMzkzLjYgNDIyLjEgMzkzLjYgNDIyLjcgMzkzLjYgNDIzLjQgMzkzLjZMNDIzLjQgMzk5LjZDNDIyLjcgMzk5LjYgNDIyLjEgMzk5LjYgNDIxLjQgMzk5LjYgNDIwLjcgMzk5LjYgNDIwLjEgMzk5LjcgNDE5LjQgMzk5LjZaTTQyNS40IDM5OS42IDQyNS40IDM5My42QzQyNi43IDM5My41IDQyOC4xIDM5My40IDQyOS40IDM5My4zTDQyOS40IDM5OS4zQzQyOC4xIDM5OS40IDQyNi44IDM5OS41IDQyNS40IDM5OS42Wk00MzEuNCAzOTkgNDMxLjQgMzkzQzQzMi44IDM5Mi44IDQzNC4xIDM5Mi42IDQzNS40IDM5Mi4zTDQzNS40IDM5OC4yQzQzNC4yIDM5OC41IDQzMi44IDM5OC44IDQzMS40IDM5OVpNNDM3LjQgMzk3LjcgNDM3LjQgMzkxLjhDNDM4LjggMzkxLjUgNDQwLjEgMzkxIDQ0MS40IDM5MC41TDQ0MS40IDM5Ni4zQzQ0MC4xIDM5Ni45IDQzOC44IDM5Ny4zIDQzNy40IDM5Ny43Wk00NDMuNCAzOTUuMyA0NDMuNCAzODkuNkM0NDQuNSAzODkuMSA0NDUuNSAzODguNCA0NDYuNCAzODcuNkw0NDYuNCAzOTEuNkM0NDYuNCAzOTIuOSA0NDUuNCAzOTQuMSA0NDMuNCAzOTUuM1pNMzk5LjQgMzk1LjNDMzk3LjUgMzk0LjEgMzk2LjQgMzkyLjkgMzk2LjQgMzkxLjdMMzk2LjQgMzg3LjdDMzk3LjMgMzg4LjUgMzk4LjMgMzg5LjIgMzk5LjQgMzg5LjdMMzk5LjQgMzk1LjNaTTM5Ni40IDM4My43QzM5Ni40IDM3OS45IDQwNi43IDM3NS43IDQyMS40IDM3NS43IDQzNi4xIDM3NS43IDQ0Ni40IDM3OS45IDQ0Ni40IDM4My43IDQ0Ni40IDM4Ny41IDQzNi4xIDM5MS43IDQyMS40IDM5MS43IDQwNi43IDM5MS43IDM5Ni40IDM4Ny40IDM5Ni40IDM4My43Wk0zOTkuOSA0MDYuN0M0MDEuNyA0MTAuNCA0MDguNSA0MTIuOCA0MTYuNCA0MTMuOUw0MTYuNCA0MTguNEM0MDQuNCA0MTcuNiAzOTYuNCA0MTMuOSAzOTYuNCA0MTAuNiAzOTYuNCA0MDkuMyAzOTcuNyA0MDggMzk5LjkgNDA2LjdaTTM5OS40IDQyMi4zQzM5Ny41IDQyMS4xIDM5Ni40IDQxOS45IDM5Ni40IDQxOC43TDM5Ni40IDQxNC43QzM5Ny4zIDQxNS41IDM5OC4zIDQxNi4yIDM5OS40IDQxNi43TDM5OS40IDQyMi4zWk00MDUuNCA0MjQuN0M0MDQgNDI0LjMgNDAyLjcgNDIzLjkgNDAxLjQgNDIzLjNMNDAxLjQgNDE3LjVDNDAyLjcgNDE4IDQwNCA0MTguNCA0MDUuNCA0MTguOEw0MDUuNCA0MjQuN1pNNDExLjQgNDI2QzQxMCA0MjUuOCA0MDguNiA0MjUuNSA0MDcuNCA0MjUuM0w0MDcuNCA0MTkuNEM0MDguNyA0MTkuNyA0MTAgNDE5LjkgNDExLjQgNDIwLjFMNDExLjQgNDI2Wk00MTMuNCA0MjAuMkM0MTQuNCA0MjAuMyA0MTUuNCA0MjAuNCA0MTYuNSA0MjAuNSA0MTYuNiA0MjEuMiA0MTcgNDIxLjkgNDE3LjQgNDIyLjZMNDE3LjQgNDI2LjZDNDE2IDQyNi41IDQxNC43IDQyNi40IDQxMy40IDQyNi4zTDQxMy40IDQyMC4yWk00MTkuNCA0MjQuNEM0MjAgNDI0LjggNDIwLjcgNDI1LjIgNDIxLjQgNDI1LjZMNDIxLjQgNDI2LjZDNDIwLjcgNDI2LjYgNDIwLjEgNDI2LjYgNDE5LjQgNDI2LjZMNDE5LjQgNDI0LjRaTTQyMy40IDQzMi43IDQyMy40IDQyOC43QzQyNC4zIDQyOS41IDQyNS4zIDQzMC4yIDQyNi40IDQzMC43TDQyNi40IDQzNi40QzQyNC41IDQzNS4xIDQyMy40IDQzMy45IDQyMy40IDQzMi43Wk00NDYuNCA0MzQuNkM0NDcuMSA0MzQuNiA0NDcuNyA0MzQuNiA0NDguNCA0MzQuNiA0NDkuMSA0MzQuNiA0NDkuNyA0MzQuNiA0NTAuNCA0MzQuNkw0NTAuNCA0NDAuNkM0NDkuNyA0NDAuNiA0NDkuMSA0NDAuNiA0NDguNCA0NDAuNiA0NDcuNyA0NDAuNiA0NDcuMSA0NDAuNiA0NDYuNCA0NDAuNkw0NDYuNCA0MzQuNlpNNDcwLjQgNDMwLjZDNDcxLjUgNDMwLjEgNDcyLjUgNDI5LjQgNDczLjQgNDI4LjZMNDczLjQgNDMyLjZDNDczLjQgNDMzLjggNDcyLjMgNDM1LjEgNDcwLjQgNDM2LjJMNDcwLjQgNDMwLjZaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg=="
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 836,
+        "left": 0,
+        "width": 76,
+        "height": 114
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBvdmVyZmxvdz0iaGlkZGVuIiB4bWw6c3BhY2U9InByZXNlcnZlIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBoZWlnaHQ9Ijk2IiB3aWR0aD0iOTYiPjxkZWZzPjxjbGlwUGF0aCBpZD0iY2xpcDAiPjxyZWN0IGhlaWdodD0iOTYiIHdpZHRoPSI5NiIgeT0iMzUyIiB4PSIyNzIiPjwvcmVjdD48L2NsaXBQYXRoPjwvZGVmcz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMjcyIC0zNTIpIiBjbGlwLXBhdGg9InVybCgjY2xpcDApIj48cGF0aCBmaWxsLW9wYWNpdHk9IjEiIGZpbGwtcnVsZT0ibm9uemVybyIgZmlsbD0iIzhBMzZEMCIgZD0iTTMyNC43NSAzOTEuMDUgMzE1Ljk0IDM5MS4wNUMzMTUuMTEyIDM5MS4wNSAzMTQuNDQgMzkxLjcyMiAzMTQuNDQgMzkyLjU1IDMxNC40NCAzOTMuMzc4IDMxNS4xMTIgMzk0LjA1IDMxNS45NCAzOTQuMDVMMzI0Ljc1IDM5NC4wNUMzMjUuNTc4IDM5NC4wNSAzMjYuMjUgMzkzLjM3OCAzMjYuMjUgMzkyLjU1IDMyNi4yNSAzOTEuNzIyIDMyNS41NzggMzkxLjA1IDMyNC43NSAzOTEuMDVaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zMjAuMzQgMzk5QzMyMi4wMyAzOTguOTk4IDMyMy40MjkgMzk3LjY4NiAzMjMuNTQgMzk2TDMxNy4xNSAzOTZDMzE3LjI1NSAzOTcuNjg1IDMxOC42NTIgMzk4Ljk5OCAzMjAuMzQgMzk5WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjOEEzNkQwIiBkPSJNMzIwLjM0IDM2Mi40NCAzMjAuMzQgMzYyLjQ0QzMxMy4zNTYgMzYyLjQ4OCAzMDcuNjg1IDM2OC4wOTcgMzA3LjU2IDM3NS4wOEwzMDcuNTYgMzc1LjUyQzMwNy41OTQgMzc3LjA1NCAzMDcuODk1IDM3OC41NyAzMDguNDUgMzgwIDMwOC45NjcgMzgxLjMzNiAzMDkuNzE5IDM4Mi41NjkgMzEwLjY3IDM4My42NCAzMTEuODU2IDM4NS4xMzggMzEyLjg2MyAzODYuNzY5IDMxMy42NyAzODguNSAzMTMuODM4IDM4OC44MzMgMzE0LjE3NyAzODkuMDQ1IDMxNC41NSAzODkuMDVMMzI2LjE1IDM4OS4wNUMzMjYuNTIzIDM4OS4wNDUgMzI2Ljg2MiAzODguODMzIDMyNy4wMyAzODguNSAzMjcuODM4IDM4Ni43NjkgMzI4Ljg0NSAzODUuMTM4IDMzMC4wMyAzODMuNjQgMzMwLjk3NSAzODIuNTY2IDMzMS43MjMgMzgxLjMzNCAzMzIuMjQgMzgwIDMzMi43OCAzNzguNTgzIDMzMy4wODEgMzc3LjA4NiAzMzMuMTMgMzc1LjU3TDMzMy4xMyAzNzUuMTNDMzMzLjAyNyAzNjguMTI2IDMyNy4zNDUgMzYyLjQ4OCAzMjAuMzQgMzYyLjQ0Wk0zMzAuMTggMzc1LjQ0QzMzMC4xMzkgMzc2LjYyMSAzMjkuOTAyIDM3Ny43ODYgMzI5LjQ4IDM3OC44OSAzMjkuMDg2IDM3OS44ODEgMzI4LjUyMSAzODAuNzk1IDMyNy44MSAzODEuNTkgMzI2LjY4NiAzODIuOTUyIDMyNS43MjQgMzg0LjQzOCAzMjQuOTQgMzg2LjAyTDMxNS43NSAzODYuMDJDMzE0Ljk2MyAzODQuNDM4IDMxMy45OTcgMzgyLjk1MSAzMTIuODcgMzgxLjU5IDMxMi4xNjMgMzgwLjc5NCAzMTEuNjAxIDM3OS44OCAzMTEuMjEgMzc4Ljg5IDMxMC43ODggMzc3Ljc4NiAzMTAuNTUxIDM3Ni42MjEgMzEwLjUxIDM3NS40NEwzMTAuNTEgMzc1LjA4QzMxMC42MDIgMzY5LjcwOCAzMTQuOTY3IDM2NS4zOTIgMzIwLjM0IDM2NS4zNiAzMjUuNzE1IDM2NS4zOTIgMzMwLjA4MiAzNjkuNzA2IDMzMC4xOCAzNzUuMDhaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zMTUuNTIgMzc4LjMzIDMyMC44MSAzNjggMzIwLjgxIDM3My45OCAzMjYuMyAzNzIuODkgMzIwLjgxIDM4MyAzMjAuODEgMzc3LjEzIDMxNS41MiAzNzguMzNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zNDguODQgNDA1LjUzQzM0OC44NCA0MDkuODI3IDM0NS4zNTcgNDEzLjMxIDM0MS4wNiA0MTMuMzEgMzM2Ljc2MyA0MTMuMzEgMzMzLjI4IDQwOS44MjcgMzMzLjI4IDQwNS41MyAzMzMuMjggNDAxLjIzMyAzMzYuNzYzIDM5Ny43NSAzNDEuMDYgMzk3Ljc1IDM0NS4zNTcgMzk3Ljc1IDM0OC44NCA0MDEuMjMzIDM0OC44NCA0MDUuNTNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zMDcuMzQgNDA1LjUzQzMwNy4zNCA0MDkuODI3IDMwMy44NTcgNDEzLjMxIDI5OS41NiA0MTMuMzEgMjk1LjI2MyA0MTMuMzEgMjkxLjc4IDQwOS44MjcgMjkxLjc4IDQwNS41MyAyOTEuNzggNDAxLjIzMyAyOTUuMjYzIDM5Ny43NSAyOTkuNTYgMzk3Ljc1IDMwMy44NTcgMzk3Ljc1IDMwNy4zNCA0MDEuMjMzIDMwNy4zNCA0MDUuNTNaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zNTUuMDYgNDIwLjA1QzM1Mi44MTkgNDE4LjMwNSAzNTAuMjI2IDQxNy4wNjYgMzQ3LjQ2IDQxNi40MiAzNDUuMzc5IDQxNS44MTMgMzQzLjIyOCA0MTUuNDc3IDM0MS4wNiA0MTUuNDIgMzM4Ljg4NyA0MTUuNDE1IDMzNi43MjggNDE1Ljc1MyAzMzQuNjYgNDE2LjQyIDMzMi41ODkgNDE2Ljk3MiAzMzAuNjA4IDQxNy44MjEgMzI4Ljc4IDQxOC45NCAzMjguNjYgNDE5LjA4IDMyOC41NSA0MTkuMjIgMzI4LjQyIDQxOS4zNSAzMzEuMzI4IDQyMC4xMzMgMzM0LjA0OSA0MjEuNDkzIDMzNi40MiA0MjMuMzUgMzM4LjI5MSA0MjQuNzE2IDMzOS4zODMgNDI2LjkwNCAzMzkuMzUgNDI5LjIyTDMzOS4zNSA0MzEgMzU2LjYyIDQzMSAzNTYuNjIgNDIzLjE3QzM1Ni42NSA0MjEuOTM1IDM1Ni4wNjYgNDIwLjc2NyAzNTUuMDYgNDIwLjA1WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjOEEzNkQwIiBkPSJNMzAxLjI5IDQyOS4yMkMzMDEuMjkyIDQyNi45NyAzMDIuMzI0IDQyNC44NDQgMzA0LjA5IDQyMy40NUwzMDQuMjEgNDIzLjM1IDMwNC4zNCA0MjMuMjZDMzA2LjczOCA0MjEuNTU0IDMwOS4zOTEgNDIwLjIzOCAzMTIuMiA0MTkuMzYgMzEyIDQxOS4xNSAzMTEuODIgNDE4LjkzIDMxMS42MyA0MTguNzEgMzA5Ljg3MyA0MTcuNjgxIDMwNy45NzcgNDE2LjkxIDMwNiA0MTYuNDIgMzAzLjkxOSA0MTUuODEyIDMwMS43NjcgNDE1LjQ3NiAyOTkuNiA0MTUuNDIgMjk3LjQyNyA0MTUuNDE2IDI5NS4yNjggNDE1Ljc1MyAyOTMuMiA0MTYuNDIgMjkwLjQ3MyA0MTcuMTcyIDI4Ny45IDQxOC40MDEgMjg1LjYgNDIwLjA1IDI4NC42MTUgNDIwLjc4OCAyODQuMDI1IDQyMS45MzkgMjg0IDQyMy4xN0wyODQgNDMxIDMwMS4yOSA0MzFaIj48L3BhdGg+PHBhdGggZmlsbC1vcGFjaXR5PSIxIiBmaWxsLXJ1bGU9Im5vbnplcm8iIGZpbGw9IiM4QTM2RDAiIGQ9Ik0zMDQuNzUgNDM3IDMwNC43NSA0MjkuMjJDMzA0Ljc1NSA0MjcuOTk2IDMwNS4zMzIgNDI2Ljg0NSAzMDYuMzEgNDI2LjExIDMwOC42MDUgNDI0LjQ1NCAzMTEuMTggNDIzLjIyNSAzMTMuOTEgNDIyLjQ4IDMxNS45NzcgNDIxLjgwOSAzMTguMTM3IDQyMS40NzEgMzIwLjMxIDQyMS40OCAzMjIuNDc4IDQyMS41MzEgMzI0LjYzIDQyMS44NjcgMzI2LjcxIDQyMi40OCAzMjkuNDgxIDQyMy4xMiAzMzIuMDc5IDQyNC4zNTkgMzM0LjMyIDQyNi4xMSAzMzUuMzIyIDQyNi44MjQgMzM1LjkwMiA0MjcuOTkgMzM1Ljg3IDQyOS4yMkwzMzUuODcgNDM3WiI+PC9wYXRoPjxwYXRoIGZpbGwtb3BhY2l0eT0iMSIgZmlsbC1ydWxlPSJub256ZXJvIiBmaWxsPSIjOEEzNkQwIiBkPSJNMzI4LjA5IDQxMS41OEMzMjguMDkgNDE1Ljg3NyAzMjQuNjA3IDQxOS4zNiAzMjAuMzEgNDE5LjM2IDMxNi4wMTMgNDE5LjM2IDMxMi41MyA0MTUuODc3IDMxMi41MyA0MTEuNTggMzEyLjUzIDQwNy4yODMgMzE2LjAxMyA0MDMuOCAzMjAuMzEgNDAzLjggMzI0LjYwNyA0MDMuOCAzMjguMDkgNDA3LjI4MyAzMjguMDkgNDExLjU4WiI+PC9wYXRoPjwvZz48L3N2Zz4="
+    },
+    {
+      "name": "Total MTTR W RCA",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 570,
+        "left": 0,
+        "width": 456,
+        "height": 114
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "Hrs",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#74cff7"
+              },
+              {
+                "value": -1,
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Total MTTR W/O RCA",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 684,
+        "left": 0,
+        "width": 456,
+        "height": 114
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "Hrs",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "If there were 0 RCA"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "value": -1,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Operation Team's Efficiency Gain",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 418,
+        "left": 0,
+        "width": 456,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "metricSelector": "(1 - ((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))/(\n((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))+((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))))*100",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "%",
+            "valueFormat": "0,00",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "displayName": "",
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": true
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 20,
+                "color": "#7dc540"
+              },
+              {
+                "value": 10,
+                "color": "#99dea8"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&((1 - ((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))/(((mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))+((mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(100)/60))))*100):limit(100):names"
+      ]
+    },
+    {
+      "name": "Total Incidents reported",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 0,
+        "width": 342,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_incident_reported",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_incident_reported:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "# Incidents with RCA",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 380,
+        "width": 456,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_incidents_with_rca",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#99dea8"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_incidents_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "# Incidents without RCA",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 76,
+        "left": 874,
+        "width": 380,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-90d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_incidents_wo_rca",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 20,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 0,
+                "color": "#f5d30f"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_incidents_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names"
+      ]
+    }
+  ]
+}

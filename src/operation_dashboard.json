@@ -1,0 +1,2564 @@
+{
+  "metadata": {
+    "configurationVersions": [
+      6
+    ],
+    "clusterVersion": "1.256.138.20221229-145939"
+  },
+  "dashboardMetadata": {
+    "name": "Insightify: Incident Report - $1",
+    "shared": true,
+    "owner": "dynatraceone@dynatrace.com",
+    "preset": true,
+    "hasConsistentColors": false
+  },
+  "tiles": [
+    {
+      "name": "Problem Details (at environment-level)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 38,
+        "width": 1064,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Incidents by Severity (at environment-level)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 266,
+        "left": 0,
+        "width": 1178,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Problem by Impacted Entities (at environment-level)",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 874,
+        "left": 0,
+        "width": 1064,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Incident Details By Management Zone and their Severities, Impacted Entities and MTTR",
+      "tileType": "HEADER",
+      "configured": true,
+      "bounds": {
+        "top": 1444,
+        "left": 0,
+        "width": 1482,
+        "height": 38
+      },
+      "tileFilter": {}
+    },
+    {
+      "name": "Image",
+      "tileType": "IMAGE",
+      "configured": true,
+      "bounds": {
+        "top": 0,
+        "left": 0,
+        "width": 38,
+        "height": 38
+      },
+      "tileFilter": {},
+      "image": "data:image/svg+xml;base64,PHN2ZyBoZWlnaHQ9IjUxMiIgd2lkdGg9IjUxMiIgZmlsbD0iI2RjMTcyYSIgdmlld0JveD0iMCAwIDUxMiA1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTMzNS41MzEgNjRIMTc2LjQ3M0w2NC4wMDIgMTc2LjQ3NlYzMzUuNTNMMTc2LjQ3MiA0NDhoMTU5LjA1OWwxMTIuNDY3LTExMi40N1YxNzYuNDc2TDMzNS41MzEgNjR6TTI4NCAzNzZoLTU2di01Ni4wMDJoNTZWMzc2em0wLTEwOGgtNTZWMTM2aDU2djEzMnoiPjwvcGF0aD48L3N2Zz4="
+    },
+    {
+      "name": "Error",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 228,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Error Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Error Problem\")))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Error Problem\")))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Resource",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 684,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Resource Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 5,
+                "color": "#dc172a"
+              },
+              {
+                "value": 5,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Resource Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Resource Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Custom",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 950,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Custom Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Custom Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Custom Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Application",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 798,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Application Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Application Problem\")))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Environment",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 0,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Environment Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Environment Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Environment Problem\")))):splitBy():median:auto:sort(value(median,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Service",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 532,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "spaceAggregation": "AVG",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dimension"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Service Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Service Problem\")))):splitBy():avg:auto:sort(value(avg,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Service Problem\")))):splitBy():avg:auto:sort(value(avg,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Infrastructure",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 912,
+        "left": 266,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "spaceAggregation": "MEDIAN",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Infrastructure Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Infrastructure Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Infrastructure Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():median:auto:sort(value(median,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Total Problem Reported",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 0,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Total Problems",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Total Problems\")))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Total Problems\")))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Reported Incidents (Top 5 Management Zones)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 4332,
+        "left": 0,
+        "width": 608,
+        "height": 304
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Top list",
+      "queries": [
+        {
+          "id": "A",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "metricSelector": "total_reported_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(5)",
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TOP_LIST",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "properties": {
+              "color": "DEFAULT"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_reported_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(5)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 0,
+        "width": 456,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## All reported problems (including > 30 mins)\n"
+    },
+    {
+      "name": "Total Incidents Reported",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 570,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_incident_reported",
+          "spaceAggregation": "SUM",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_incident_reported:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(20)):limit(100):names",
+        "resolution=null&(total_incident_reported:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sum:auto:sort(value(sum,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 190,
+        "left": 570,
+        "width": 532,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "## Total incidents (problem open > 30 mins) and its MTTR\n"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 494,
+        "left": 0,
+        "width": 1178,
+        "height": 342
+      },
+      "tileFilter": {},
+      "markdown": "## Severity Definition  \n\n**Availability**:  \nThese indicate high-severity incidents within your environment, such as a complete outage or unavailability of servers or processes. These should be treated as P1.  \n\n**Error**:  \nError events indicate increased error rates or other error-related incidents that interfere with the regular operation within an entity.  \n\n**Slowdown**:  \nSlowdown events indicate a decrease of performance in one of the operational services or applications.  \n\n**Resource**:  \nResource events indicate resource contention like CPU-usage, CPU-saturation, etc.  \n\n\n**Custom**:  \nCustom-type indicate any alerts generated on user-defined thresholds.  \n\n\n\n***More details*** in our [help documentation](https://www.dynatrace.com/support/help/shortlink/event-types)"
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 1064,
+        "left": 0,
+        "width": 1064,
+        "height": 342
+      },
+      "tileFilter": {},
+      "markdown": "## Impacted Entities   \n\n**Environment**:  \nAny incident that has downtime at environment-level. An example would be none of the oneAgents are able to reach out to the cluster (due to environment-wide network downtime). \n\n**Infrastructure**:  \nAny incident that were opened which were a result of an anomaly at infra-level.  \n\n**Service**:  \nAny incident that were opened which were a result of an anomaly at services.  \n\n\n**Application**:  \nAny incident that were opened which were a result of an anomaly at application-level. Incidents at application-level typically leads to **business impact** (as it possibly could impact users connecting the application).  "
+    },
+    {
+      "name": "Incidents generated and root cause by management zone",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 1482,
+        "left": 0,
+        "width": 1482,
+        "height": 1254
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_reported_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "B",
+          "metric": "root_cause",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "reported_availability_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "D",
+          "metric": "reported_error_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "F",
+          "metric": "reported_performance_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "G",
+          "metric": "reported_resource_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "H",
+          "metric": "reported_infra_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "I",
+          "metric": "reported_service_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "J",
+          "metric": "reported_application_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Generated Incidents"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "B:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Root Cause Available"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "C:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Availability"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "D:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Error"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "F:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Slowdown"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "G:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Resource"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "H:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Entity Impacted - Infra"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "I:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Entity Impacted - Service"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "J:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Entity Impacted - Application"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "A",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_reported_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(20)):limit(100):names,(root_cause:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(20)):limit(100):names,(reported_availability_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_error_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_performance_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_resource_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_infra_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_service_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(reported_application_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 2774,
+        "left": 0,
+        "width": 1102,
+        "height": 38
+      },
+      "tileFilter": {},
+      "markdown": "Incidents generated sliced by Management Zone  \n\nTable details:  \n1. mgmt_zone: Name of the management zone.  \n2. Total Incidents: Incidents generated within that management zone.  \n3. MTTR With RCA (mins): Mean time to resolution when there is a RCA available.  \n4. MTTR without RCA (mins): Mean Time to Resolution when Davis AI could not identify RCA (possibly due to limited visibility).  "
+    },
+    {
+      "name": "Markdown",
+      "tileType": "MARKDOWN",
+      "configured": true,
+      "bounds": {
+        "top": 4066,
+        "left": 0,
+        "width": 1102,
+        "height": 228
+      },
+      "tileFilter": {},
+      "markdown": "**Table Legend**:  \n\n1. **mgmt_zone**: Name of the management zone.  \n\n2. **Total Incidents**: Incidents generated within that management zone.  \n\n3. **Incident with Davis AI RCA**: Incidents reported with Davis AI RCA available.  \n\n3. **MTTR With RCA (mins)**: Mean time to resolution when there is a Davis AI provided RCA available.  \n\n4. **MTTR without RCA (mins)**: Mean Time to Resolution when Davis AI did not identify RCA (possibly due to limited visibility). "
+    },
+    {
+      "name": "MTTR Data (Split by Management Zone)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 2812,
+        "left": 0,
+        "width": 1102,
+        "height": 1254
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "total_reported_problems",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "C",
+          "metric": "root_cause",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "D",
+          "metric": "mttr_with_rca",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        },
+        {
+          "id": "E",
+          "metric": "mttr_wo_rca",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "mgmt_zone"
+          ],
+          "sortBy": "DESC",
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "limit": 100,
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "TABLE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Total Incidents"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "C:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "Incidents with Davis AI RCA"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "D:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "MTTR With RCA (mins)"
+            },
+            "seriesOverrides": []
+          },
+          {
+            "matcher": "E:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "DEFAULT",
+              "seriesType": "LINE",
+              "alias": "MTTR Without RCA (mins)"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "columnId": "",
+            "rules": [
+              {
+                "color": "#7dc540"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#dc172a"
+              }
+            ],
+            "queryId": "D",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(total_reported_problems:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(root_cause:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names,(mttr_wo_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy(mgmt_zone):sort(value(auto,descending)):limit(100)):limit(100):names"
+      ]
+    },
+    {
+      "name": "Availability",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 0,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Availability Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "value": 3,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Availability Problem\")))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Availability Problem\")))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "Slowdown",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 304,
+        "left": 456,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [
+            "dt.entity.custom_device"
+          ],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Performance Problem",
+                    "evaluator": "EQ"
+                  }
+                ]
+              },
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Performance Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(eq(dimension,\"Performance Problem\")),or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "MTTR (in minutes)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 228,
+        "width": 228,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "ext:tech.insightify.databases.problem_analysis",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              },
+              {
+                "filter": "dimension",
+                "filterType": "DIMENSION",
+                "filterOperator": "OR",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Mean Resolution Time",
+                    "evaluator": "EQ"
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": true,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "value": 0,
+                "color": "#dc172a"
+              },
+              {
+                "value": 3,
+                "color": "#f5d30f"
+              },
+              {
+                "value": 6,
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": false
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Mean Resolution Time\")))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names",
+        "resolution=null&(ext:tech.insightify.databases.problem_analysis:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))),or(eq(dimension,\"Mean Resolution Time\")))):splitBy():sort(value(auto,descending)):limit(20))"
+      ]
+    },
+    {
+      "name": "MTTR (in minutes)",
+      "tileType": "DATA_EXPLORER",
+      "configured": true,
+      "bounds": {
+        "top": 38,
+        "left": 836,
+        "width": 266,
+        "height": 152
+      },
+      "tileFilter": {
+        "timeframe": "-30d to now"
+      },
+      "customName": "Data explorer results",
+      "queries": [
+        {
+          "id": "A",
+          "metric": "mttr_with_rca",
+          "timeAggregation": "DEFAULT",
+          "splitBy": [],
+          "filterBy": {
+            "filterOperator": "AND",
+            "nestedFilters": [
+              {
+                "filter": "dt.entity.custom_device",
+                "filterType": "NAME",
+                "filterOperator": "OR",
+                "entityAttribute": "entityName",
+                "nestedFilters": [],
+                "criteria": [
+                  {
+                    "value": "Insightify - $1",
+                    "evaluator": "IN",
+                    "matchExactly": true
+                  }
+                ]
+              }
+            ],
+            "criteria": []
+          },
+          "enabled": true
+        }
+      ],
+      "visualConfig": {
+        "type": "SINGLE_VALUE",
+        "global": {
+          "hideLegend": false
+        },
+        "rules": [
+          {
+            "matcher": "A:",
+            "unitTransform": "auto",
+            "valueFormat": "auto",
+            "properties": {
+              "color": "ROYALBLUE",
+              "seriesType": "LINE"
+            },
+            "seriesOverrides": []
+          }
+        ],
+        "axes": {
+          "xAxis": {
+            "visible": true
+          },
+          "yAxes": []
+        },
+        "heatmapSettings": {
+          "yAxis": "VALUE"
+        },
+        "singleValueSettings": {
+          "showTrend": false,
+          "showSparkLine": false,
+          "linkTileColorToThreshold": false
+        },
+        "thresholds": [
+          {
+            "axisTarget": "LEFT",
+            "rules": [
+              {
+                "color": "#dc172a"
+              },
+              {
+                "color": "#f5d30f"
+              },
+              {
+                "color": "#7dc540"
+              }
+            ],
+            "queryId": "",
+            "visible": true
+          }
+        ],
+        "tableSettings": {
+          "isThresholdBackgroundAppliedToCell": false
+        },
+        "graphChartSettings": {
+          "connectNulls": false
+        },
+        "honeycombSettings": {
+          "showHive": true,
+          "showLegend": true,
+          "showLabels": false
+        }
+      },
+      "queriesSettings": {
+        "resolution": ""
+      },
+      "metricExpressions": [
+        "resolution=Inf&(mttr_with_rca:filter(and(or(in(\"dt.entity.custom_device\",entitySelector(\"type(custom_device),entityName.equals(~\"Insightify - $1~\")\"))))):splitBy():sort(value(auto,descending)):limit(20)):limit(100):names"
+      ]
+    }
+  ]
+}
