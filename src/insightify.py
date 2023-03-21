@@ -577,8 +577,12 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
         post_param = {'Content-Type':'text/plain;charset=utf-8', 'Authorization':'Api-Token {}'.format(self.conf_password)}
         
         populate_data = requests.post(query, headers = post_param, data = payload, verify=False)
+
         logger.info(query)
+        logger.info(payload)
         logger.info(populate_data)
+        logger.info(populate_data.content)
+
 
         if populate_data.status_code >=200 and populate_data.status_code <= 400:
           data = populate_data.json()
@@ -1078,7 +1082,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
 
             for key in self.app_mgmt_zone.keys():
                 metric += "consumption.demUnits,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(self.app_mgmt_zone[key][0].consumption) + "\n" 
-            logger.info(metric)
             self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
             tmp_dic = {}
@@ -1128,7 +1131,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 metric += "consumption.hostUnits,host_group=\"" + key + "\",dt.entity.custom_device=" + entityID + " " + str(tmp_dic[key]) + "\n"
   
             self.dtApiIngestMetrics(INGEST_METRICS,metric)
-            logger.info(metric)
 
         except Exception as e:
           logger.exception("Exception encountered in populate_management_zone_consumption: ", str(e))  
@@ -1201,7 +1203,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                metric += "incidents.seen,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['count']) + "\n"
                metric_downtime += "downtime,dt.entity.custom_device=\"" + item['entityId'] + "\"" + ",year="+ str(item['year']) + ",month=" + str(item['month']) + ",problem_title=\"" + str(item['column_value']) + "\",downtime=" + str(item['downtime']) + ",mgmt_zone=\"" + str(item['zone']) + "\" " + str(item['downtime']) + "\n"
 
-           logger.info(metric)
            self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
            logger.info(metric_downtime)
@@ -1352,8 +1353,9 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 elif impact_level == "ENVIRONMENT":
                   detailed_prb_data.environment = detailed_prb_data.environment + 1
 
-          metric = ""
           for key in problems_mgmt_zone.keys():
+              metric = ""
+              logger.info("populating metrics for -> {}".format(key))
               #Find the median response time for each mgmt_zone and convert it to minutes (from microseconds)
               try:
                 problems_mgmt_zone[key].mttr_rca = ((sum(problems_mgmt_zone[key].mttr_rca_list)/len(problems_mgmt_zone[key].mttr_rca_list)))/60000
@@ -1381,10 +1383,10 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
                 metric += "mttr_with_rca,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(problems_mgmt_zone[key].mttr_rca) + "\n"
                 metric += "mttr_wo_rca,mgmt_zone=\"" + key + "\"" + ",dt.entity.custom_device=" + entityID + " " + str(problems_mgmt_zone[key].mttr_wo_rca) + "\n"
 
-                logger.info(metric)
                 self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
           if (self.get_problem_data_mgmt_zone == "Yes"):
+              metric = ""
               import time
               now = time.time()
 
@@ -1412,7 +1414,6 @@ class RemoteInsightifyExtension(RemoteBasePlugin):
               metric += "total_mttr_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_rca) + "\n"
               metric += "total_mttr_wo_rca" + ",dt.entity.custom_device=" + entityID + " " + str(mttr_wo_rca) + "\n"
 
-              logger.info(metric)
               self.dtApiIngestMetrics(INGEST_METRICS,metric)
 
               #Once data is pushed, set next collection interval accordingly

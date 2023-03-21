@@ -8,7 +8,7 @@
   "dashboardMetadata": {
     "name": "Insightify: Incident Report - $1",
     "shared": true,
-    "owner": "dynatraceone@dynatrace.com",
+    "owner": "dynatraceone",
     "preset": true,
     "hasConsistentColors": false
   },
