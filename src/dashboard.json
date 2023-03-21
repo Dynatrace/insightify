@@ -8,7 +8,7 @@
   "dashboardMetadata": {
     "name": "Insightify: Adoption Overview: $1",
     "shared": true,
-    "owner": "dynatraceone@dynatrace.com",
+    "owner": "dynatraceone",
     "preset": true,
     "popularity": 1,
     "hasConsistentColors": false
