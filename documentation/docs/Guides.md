@@ -18,8 +18,6 @@ sidebar_position: 3
 **Tenant URL** The tenant-URL you would like to fetch data from.  
 **Tenant Token** Token generated with access to read metrics, access problems, events. For details on how to generate token, refer to [help link](https://www.dynatrace.com/support/help/shortlink/token)  
 **Tenant Config Token** Token generated with permissions to ingest metrics, read metrics, ingest logs (optional), write and read configuration.  
-**Capture consumption data per management zone** Flag to capture consumption data (Host Units, DEM) and slice it per management zone. Default value of the configuration is **No**.  
-**Capture host unit consumption data per host zone** Flag to capture Host Units and slice it as per host group. Default value of the configuration is **No**.  
 **Capture and report problem data** Flag to pull problem data and report data on problems in the Insightify Dashboard/Device. Default value of the configuration is **Yes**.  
 **Capture and report feature adoption data** Flag to pull problem data and report data on Dynatrace adoption flags in a dashboard named `Insightify Adoption Overview`. Default value of the configuration is **Yes**.  
 **Capture and report problem data per management** Flag to pull problem data and report data on problems per management zone in a dashboard named `Insightify Incident Report`. Default value of the configuration is **No**.  
@@ -44,10 +42,9 @@ sidebar_position: 3
 4. Lastly, multiple dashboards will be created (depending on your configuration) for each of the endpoint for a quick view of each endpoint.  
    ![dashboard-view-1](Adoption_Overview.gif)  
 
-   If you have enabled **Capture and report problem data per management zone**, an additional dashboard **Insightify: Incident Report: \<Endpoint-name\>** will be created.  
+   If you have enabled **Capture and report problem data per management zone**, an additional dashboard **Insightify: Incident Report: Endpoint-name** will be created.  
    ![dashboard-view-2](Incident_Report.gif)  
 
-
-> Note: Consumption data per management-zone/host-group is available only on the dashboard view or under Data explorer.
+> Note: Consumption data per management-zone is available only on the dashboard view or under Data explorer.
 
 

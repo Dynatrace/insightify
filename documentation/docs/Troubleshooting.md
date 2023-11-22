@@ -27,15 +27,11 @@ For example, to pull problem data, please make sure that you have **Capture and 
 Similarly, to pull adoption data, please make sure that you have **Capture and report feature adoption data** to **Yes**  
 ![image](adoption_config.png)  
 
-Lastly, to pull data as per management zones, make sure that you have **Capture consumption data per consumption data** to **Yes**  
-![image](HU_management_zone.png)  
-
 3. Granularity of data  
 If the above two conditions are fulfilled and still you are not getting data, it is likely that the API call is not made internally by the extension. Please note the data is pulled periodically depending on the type of metrics.  
 
 **For reference**:  
 Data for **Problems** are pulled only **once per day**  
-Data for **License consumption** is pulled **once every hour**  
 Data for **Adoption feature metrics** is pulled **once every week**  
 
 This is done to *limit* the DDU consumption as well as considering data would be more useful when pulled at the above said granulatrity.  
