@@ -16,8 +16,6 @@ Extension will create the following metrics (depending on your configuration) th
     | Host License Usage                   |     -                                |        Default                          |
     | DEM License Usage                    |     -                                |        Default                          |
     | DDU License Usage                    |     -                                |        Default                          |
-    | consumption.hostUnits                | mgmt_zone,Custom Device,host_group   |   Capture consumption by management zone, hostgroup|
-    | consumption.demUnits                 | mgmt_zone,Custom Device              |   Capture consumption by management zone |
 </details>
 
 <details>
