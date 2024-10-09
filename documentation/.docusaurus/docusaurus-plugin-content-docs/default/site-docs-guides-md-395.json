@@ -1,0 +1,27 @@
+{
+  "unversionedId": "Guides",
+  "id": "Guides",
+  "title": "Guides",
+  "description": "Extension installation and configuration",
+  "source": "@site/docs/Guides.md",
+  "sourceDirName": ".",
+  "slug": "/Guides",
+  "permalink": "/insightify/docs/Guides",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Guides.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Get Started",
+    "permalink": "/insightify/docs/get-started"
+  },
+  "next": {
+    "title": "Quick Links",
+    "permalink": "/insightify/docs/Quick-Links"
+  }
+}

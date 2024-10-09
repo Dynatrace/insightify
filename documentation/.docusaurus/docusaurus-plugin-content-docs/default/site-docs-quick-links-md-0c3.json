@@ -1,0 +1,27 @@
+{
+  "unversionedId": "Quick-Links",
+  "id": "Quick-Links",
+  "title": "Quick Links",
+  "description": "License and bill of materials",
+  "source": "@site/docs/Quick-Links.md",
+  "sourceDirName": ".",
+  "slug": "/Quick-Links",
+  "permalink": "/insightify/docs/Quick-Links",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Quick-Links.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 3,
+  "frontMatter": {
+    "sidebar_position": 3
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Guides",
+    "permalink": "/insightify/docs/Guides"
+  },
+  "next": {
+    "title": "Troubleshooting guide",
+    "permalink": "/insightify/docs/Troubleshooting"
+  }
+}

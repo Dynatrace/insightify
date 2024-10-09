@@ -1,0 +1,15 @@
+name: custom:insightify
+version: 0.0.112
+minDynatraceVersion: 1.287.0
+author:
+  name: "Dynatrace"
+
+python:
+  runtime:
+    module: insightify
+    version:
+      min: "3.10"
+
+  activation:
+    remote:
+      path: activationSchema.json

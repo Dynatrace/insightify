@@ -1,0 +1,191 @@
+{
+  "types": {
+    "custom_extension": {
+      "type": "object",
+      "displayName": "Custom Extension",
+      "properties": {
+        "Name": {
+          "displayName": "Configuration Name",
+          "type": "text",
+          "description": "A unique name for the configuration.",
+          "nullable": false,
+          "default": "MyConfiguration" 
+        },
+        "url": {
+          "displayName": "Tenant URL",
+          "type": "text",
+          "nullable": true, 
+          "description": "http://abc.live.dynatrace.com/api/v1/"
+        },
+        "token": {
+          "displayName": "Tenant Token",
+          "type": "secret",
+          "description": "Token with access to read metrics, access problem, events",
+          "nullable": true 
+        },
+        "conftoken": {
+          "displayName": "Tenant Config Token",
+          "type": "secret",
+          "description": "Token with scope - write, read config, read metrics, ingest metrics & ingest logs(optional) for viewing the metrics",
+          "nullable": true 
+        },
+        "confurl": {
+          "displayName": "Publish Tenant URL",
+          "type": "text",
+          "description": "http://xyz.live.dynatrace.com/api/v2/",
+          "nullable": true
+        },
+        "get_problem_data_mgmt_zone": {
+          "displayName": "Capture problem data per management zone",
+          "type": {
+            "$ref": "#/enums/get_problem_data_mgmt_zone"
+          },
+          "description": "Select to capture and report problem data per management zone",
+          "nullable": false,
+          "default": "Yes"
+        },
+        "problem_to_incident_duration": {
+          "displayName": "Duration (in mins) when problem is treated as incident",
+          "type": "text",
+          "description": "Time before problem is treated as incident. Default is 30 mins",
+          "nullable": false,
+          "default": "30"
+        },
+        "get_generate_report": {
+          "displayName": "Capture and Generate Problem Report Data",
+          "type": {
+            "$ref": "#/enums/get_generate_report"
+          },
+          "description": "Select timeperiod to generate problem data",
+          "nullable": false,
+          "default": "Last 30 days"
+        },
+        "management_zone_name": {
+          "displayName": "Management Zone Name",
+          "type": "text",
+          "description": "Enter the management zone name for which you will want to pull problem data for. Default is all",
+          "nullable": false,
+          "default": "All" 
+        },
+        "ag_endpoint": {
+          "displayName": "ActiveGate Endpoint (with logs module)",
+          "type": "text",
+          "description": "https://ag-ip:9999/e/env-id/api/v2/",
+          "nullable": false, 
+          "default": "None" 
+        }
+      },
+      "summaryPattern": "custom.remote.python.insightify - {url}"
+    },
+    "pythonRemote": {
+      "type": "object",
+      "displayName": "Python Remote Extension",
+      "properties": {
+        "endpoints": {
+          "displayName": "Endpoint",
+          "type": "list",
+          "items": {
+            "type": {
+              "$ref": "#/types/custom_extension"
+            }
+          },
+          "nullable": false,
+          "minItems": 1,
+          "maxItems": 100,
+          "metaData": {
+            "addItemButton": "Add endpoint"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "pythonRemote": {
+      "displayName": "Python Remote Extension",
+      "type": {
+        "$ref": "#/types/pythonRemote"
+      }
+    }
+  },
+  "dynatrace": "1",
+  "description": "extension configuration",
+  "schemaId": "python-extension.activation",
+  "displayName": "extension configuration",
+  "ownerProductManagement": "dynatrace",
+  "ownerDevelopment": "dynatrace",
+  "maturity": "GENERAL_AVAILABILITY",
+  "allowedScopes": [
+    "tenant"
+  ],
+  "multiObject": false,
+  "enums": {
+    "get_problem_data": {
+      "displayName": "get_problem_data",
+      "type": "enum",
+      "items": [
+        {
+          "value": "Yes",
+          "displayName": "Yes"
+        },
+        {
+          "value": "No",
+          "displayName": "No"
+        }
+      ]
+    },
+    "get_ff_data": {
+      "displayName": "get_ff_data",
+      "type": "enum",
+      "items": [
+        {
+          "value": "Yes",
+          "displayName": "Yes"
+        },
+        {
+          "value": "No",
+          "displayName": "No"
+        }
+      ]
+    },
+    "get_problem_data_mgmt_zone": {
+      "displayName": "get_problem_data_mgmt_zone",
+      "type": "enum",
+      "items": [
+        {
+          "value": "Yes",
+          "displayName": "Yes"
+        },
+        {
+          "value": "No",
+          "displayName": "No"
+        }
+      ]
+    },
+    "get_generate_report": {
+      "displayName": "get_generate_report",
+      "type": "enum",
+      "items": [
+        {
+          "value": "All Quarters",
+          "displayName": "All Quarters"
+        },
+        {
+          "value": "Last 90 days",
+          "displayName": "Last 90 days"
+        },
+        {
+          "value": "Last 60 days",
+          "displayName": "Last 60 days"
+        },
+        {
+          "value": "Last 30 days",
+          "displayName": "Last 30 days"
+        },
+        {
+          "value": "Last 1 day",
+          "displayName": "Last 1 day"
+        }
+      ]
+    }
+  }
+}

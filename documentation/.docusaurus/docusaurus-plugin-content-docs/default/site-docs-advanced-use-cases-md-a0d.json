@@ -1,0 +1,23 @@
+{
+  "unversionedId": "Advanced use-cases",
+  "id": "Advanced use-cases",
+  "title": "Other use-cases",
+  "description": "Whilst the extension generates the metrics and plot these onto the dashboard, there are some other features that you can leverage by doing additional configuration",
+  "source": "@site/docs/Advanced use-cases.md",
+  "sourceDirName": ".",
+  "slug": "/Advanced use-cases",
+  "permalink": "/insightify/docs/Advanced use-cases",
+  "draft": false,
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/Advanced use-cases.md",
+  "tags": [],
+  "version": "current",
+  "sidebarPosition": 5,
+  "frontMatter": {
+    "sidebar_position": 5
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Troubleshooting guide",
+    "permalink": "/insightify/docs/Troubleshooting"
+  }
+}
