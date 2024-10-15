@@ -6,12 +6,12 @@
 export default {
   "title": "Insightify Extension",
   "tagline": "Reporting Dynatrace Key Metrics Easily",
-  "url": "https://Dynatrace.github.io",
+  "url": "https://dynatrace.github.io",
   "baseUrl": "/insightify/",
   "onBrokenLinks": "throw",
   "onBrokenMarkdownLinks": "warn",
   "favicon": "img/favicon.png",
-  "organizationName": "Dynatrace",
+  "organizationName": "dynatrace",
   "projectName": "insightify",
   "i18n": {
     "defaultLocale": "en",
@@ -43,7 +43,7 @@ export default {
     "navbar": {
       "title": "Insightify Extension",
       "logo": {
-        "alt": "Dynatrace",
+        "alt": "dynatrace",
         "src": "img/DT_Logo.svg"
       },
       "items": [
@@ -54,7 +54,7 @@ export default {
           "label": "Docs"
         },
         {
-          "href": "https://github.com/Dynatrace/insightify",
+          "href": "https://github.com/dynatrace/insightify",
           "label": "GitHub",
           "position": "right"
         }

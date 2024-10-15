@@ -8,7 +8,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 const config = {
   title: "Insightify Extension",
   tagline: "Reporting Dynatrace Key Metrics Easily",
-  url: 'https://Dynatrace.github.io',
+  url: 'https://dynatrace.github.io',
   baseUrl: '/insightify/',
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -16,7 +16,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'Dynatrace',
+  organizationName: 'dynatrace',
   projectName: 'insightify',
 
   // Even if you don't use internalization, you can use this field to set useful
@@ -59,7 +59,7 @@ const config = {
       navbar: {
         title: "Insightify Extension",
         logo: {
-          alt: "Dynatrace",
+          alt: "dynatrace",
           src: "img/DT_Logo.svg"
         },
         items: [
@@ -70,7 +70,7 @@ const config = {
             label: "Docs"
           },
           {
-            href: "https://github.com/Dynatrace/insightify",
+            href: "https://github.com/dynatrace/insightify",
             label: "GitHub",
             position: "right"
           }
