@@ -335,7 +335,7 @@
       "js": [
         {
           "file": "assets/js/runtime~main.4b5f3e01.js",
-          "hash": "ab167dfa6f558730",
+          "hash": "3640fff985d21753",
           "publicPath": "/insightify/assets/js/runtime~main.4b5f3e01.js"
         }
       ]
@@ -370,9 +370,9 @@
     "377": {
       "js": [
         {
-          "file": "assets/js/main.31a105c5.js",
-          "hash": "d9cef97d86ff0035",
-          "publicPath": "/insightify/assets/js/main.31a105c5.js"
+          "file": "assets/js/main.c95fe3cd.js",
+          "hash": "58151adbc14fb7b8",
+          "publicPath": "/insightify/assets/js/main.c95fe3cd.js"
         }
       ]
     },
