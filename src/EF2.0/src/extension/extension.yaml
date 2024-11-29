@@ -1,6 +1,6 @@
 name: custom:insightify
-version: 0.0.112
-minDynatraceVersion: 1.287.0
+version: 1.0.0
+minDynatraceVersion: "1.285"
 author:
   name: "Dynatrace"
 

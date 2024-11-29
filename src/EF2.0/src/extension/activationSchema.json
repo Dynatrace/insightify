@@ -58,7 +58,7 @@
           },
           "description": "Select timeperiod to generate problem data",
           "nullable": false,
-          "default": "Last 30 days"
+          "default": "Last 7 days"
         },
         "management_zone_name": {
           "displayName": "Management Zone Name",
@@ -166,24 +166,20 @@
       "type": "enum",
       "items": [
         {
-          "value": "All Quarters",
-          "displayName": "All Quarters"
+          "value": "Last 1 day",
+          "displayName": "Last 1 day"
+        },        
+        {
+          "value": "Last 7 days",
+          "displayName": "Last 7 days"
         },
         {
-          "value": "Last 90 days",
-          "displayName": "Last 90 days"
-        },
-        {
-          "value": "Last 60 days",
-          "displayName": "Last 60 days"
+          "value": "Last 14 days",
+          "displayName": "Last 14 days"
         },
         {
           "value": "Last 30 days",
           "displayName": "Last 30 days"
-        },
-        {
-          "value": "Last 1 day",
-          "displayName": "Last 1 day"
         }
       ]
     }

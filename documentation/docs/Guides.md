@@ -20,7 +20,7 @@ sidebar_position: 3
 
 2. Once the certificate has been uploaded, download the extension bundle zip from [here](https://github.com/Dynatrace/insightify/blob/main/releases/EF2.0/1.0/bundle.zip)  
 2. Download to get the extension ZIP file. **Don't rename the file.**  
-5. Upload the ZIP file on Dynatrace. 
+5. Upload the ZIP file on Dynatrace as outlined [here](https://docs.dynatrace.com/docs/shortlink/extension-lifecycle#upload-custom-extension). 
 6. Enter the following endpoint information for pulling data:
 
    - **Configuration name:** A label to identify this connection. It is used for identification purposes.
@@ -34,7 +34,6 @@ sidebar_position: 3
      - **Ingest Metrics (API v2):** Permissions to push the host units and DEM units into Dynatrace.
      - **Read Metrics (API v2):** Permissions to read the metrics.
      - **Ingest Logs (API v2) (Optional):** Allows pushing the retrieved problem data as logs.
-
 
 
 1. Within Dynatrace, navigate to **Settings >> Monitored technologies >> Custom extensions** tab  
@@ -52,7 +51,7 @@ sidebar_position: 3
 - **Capture and report problem data per management:** Flag to pull problem data and report it per management zone in a dashboard named `Insightify Incident Report`. The default value is **Yes**.  
 - **Push problem details as logs:** Configure to push problem details as logs. If configured, the endpoint will push problem details via the `/ingest/logs` API. By default, this feature is disabled.
 - **Duration (in mins) when a problem is treated as an incident:** The time before a problem is considered an incident. Default value is 30 mins.   
-- **Capture and Generate Problem Report Data:** Select the time period for generating problem data from options like every 1 day, 30 days, 60 days, 180 days, or annually. The frequency affects data consumption; more frequent pulls provide better insights, while less frequent pulls reduce data points and consumption.  
+- **Capture and Generate Problem Report Data:** Select the time period for generating problem data from options like every 1 day, 7 days, 14 days, 30 days, or annually. The frequency affects data consumption; more frequent pulls provide better insights, while less frequent pulls reduce data points and consumption.  
 - **Management Zone Name:** Configure the management zone from which you want to pull data. By default, it pulls data from all management zones.  
 
 3. Once configured, the extension will start successfully. It should display an "OK" status.

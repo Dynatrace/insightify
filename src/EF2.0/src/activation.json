@@ -1,0 +1,25 @@
+{
+  
+    "enabled": true,
+    "description": "RestartConfig",
+    "version": "1.0.0",
+    "pythonRemote": {
+      "endpoints": [
+        {
+          "name": "MyEndpoint",
+          "url": "https://xxx.live.dynatrace.com/api/v1/",
+          "token": "xxx.xxx.xxx",
+          "conftoken": "xxx.xxx.xxxx",
+          "confurl": "https://xxx.dynatrace.com/api/v2/",
+          "get_problem_data": "Yes",
+          "get_problem_data_mgmt_zone": "Yes",
+          "problem_to_incident_duration": "30",
+          "get_generate_report": "Last 7 days",
+          "management_zone_name": "All",
+          "ag_endpoint": "https://1.1.1.1:9999/e/ykd61701/api/v2/"
+        }
+      ]
+    },
+  
+  "scope": "ag_group-default"
+}
